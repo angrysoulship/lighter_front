@@ -22,7 +22,6 @@ Page({
       url: `http://localhost:3000/api/v1/users/${options.id}`,
       success: res => {
         const info = res.data
-        console.log(info)
         page.setData({name:info.nickname, posts:info.posts})
         wx.setNavigationBarTitle({
           title: info.nickname,

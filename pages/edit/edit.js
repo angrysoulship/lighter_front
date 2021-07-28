@@ -12,7 +12,47 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    const page = this
+    wx.request({
+      url: `http://localhost:3000/api/v1/posts/${options.id}`,
+      success: res => {
+        const info = res.data.post
+        page.setData({id: info.id, mood:info.mood, text:info.text, date:info.date})
+      }
+    })
+  },
 
+  // sumbit post info
+  formSubmit: function(e) {
+    console.log(e)
+    this.setData({
+      loading: !this.data.loading
+    });
+
+    wx.showToast({
+      title: 'Sending...',
+      icon: 'loading',
+      duration: 1500
+    });
+
+    let post = {
+      mood: e.detail.value.mood,
+      text: e.detail.value.text
+    }
+
+    const page = this
+    console.log(page.data.id)
+    wx.request({
+      url: `http://localhost:3000/api/v1/posts/${page.data.id}`,
+      method: "PUT",
+      data: {post: post},
+      success: res => {
+        console.log(res)
+        wx.redirectTo({
+          url: '/pages/users/users',
+        });
+      }
+    })
   },
 
   /**
