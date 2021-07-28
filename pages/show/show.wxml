@@ -1,0 +1,14 @@
+<!--pages/show/show.wxml-->
+<text>pages/show/show.wxml</text>
+
+<view>
+ <h1>{{name}}</h1>
+</view>
+
+<view wx:for="{{posts}}" wx:for-item="post">
+  <h1>{{post.id}}</h1>
+  <h1>{{post.mood}}     </h1>
+  <h1>{{post.text}}</h1>
+  <h1 bindtap="editPost" data-id="{{post.id}}">edit</h1>
+</view>
+
