@@ -3,12 +3,18 @@
 
 <view>
  <h1>{{name}}</h1>
+ <h1>{{user_id}}</h1>
 </view>
 
 <view wx:for="{{posts}}" wx:for-item="post">
   <h1>{{post.id}}</h1>
   <h1>{{post.mood}}     </h1>
   <h1>{{post.text}}</h1>
-  <h1 bindtap="editPost" data-id="{{post.id}}">edit</h1>
+  <h1 bindtap="editPost" data-id="{{post.id}}">Edit</h1>
+  <h1 bindtap="deletePost" data-id="{{post.id}}">Delete</h1>
 </view>
+
+<h1 bindtap="createPost" data-id="{{user_id}}">New</h1>
+
+
 

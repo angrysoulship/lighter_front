@@ -12,6 +12,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     const page = this
     wx.request({
       url: `http://localhost:3000/api/v1/posts/${options.id}`,
@@ -24,7 +25,6 @@ Page({
 
   // sumbit post info
   formSubmit: function(e) {
-    console.log(e)
     this.setData({
       loading: !this.data.loading
     });
@@ -45,7 +45,7 @@ Page({
     wx.request({
       url: `http://localhost:3000/api/v1/posts/${page.data.id}`,
       method: "PUT",
-      data: {post: post},
+      data: {posts: post},
       success: res => {
         console.log(res)
         wx.redirectTo({
