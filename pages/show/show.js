@@ -13,16 +13,37 @@ Page({
       url: `/pages/edit/edit?id=${id}`,
     })
   },
+
+  deletePost: function(e) {
+    const id = e.currentTarget.dataset.id
+    wx.request({
+      url: `http://localhost:3000/api/v1/posts/${id}`,
+      method: 'DELETE',
+      success: res => {
+        wx.redirectTo({
+          url: '/pages/users/users',
+        })
+      }
+    })
+  },
+
+  createPost: function(e) {
+    const id = e.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/new/new?id=${id}`,
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options.id)
     const page = this
     wx.request({
       url: `http://localhost:3000/api/v1/users/${options.id}`,
       success: res => {
         const info = res.data
-        page.setData({name:info.nickname, posts:info.posts})
+        page.setData({name:info.nickname, posts:info.posts, user_id: options.id})
         wx.setNavigationBarTitle({
           title: info.nickname,
         })

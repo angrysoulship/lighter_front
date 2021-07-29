@@ -4,8 +4,8 @@
     "pages/logs/logs",
     "pages/users/users",
     "pages/show/show",
-    "pages/edit/edit"
-
+    "pages/edit/edit",
+    "pages/new/new"
   ],
   "window":{
     "backgroundTextStyle":"light",
