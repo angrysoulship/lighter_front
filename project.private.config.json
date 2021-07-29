@@ -23,6 +23,24 @@
           "pathName": "pages/show/show",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/new/test",
+          "pathName": "pages/new/test",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/new/test2",
+          "pathName": "pages/new/test2",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/posts/posts",
+          "pathName": "pages/posts/posts",
+          "query": "",
+          "scene": null
         }
       ]
     }

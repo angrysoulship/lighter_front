@@ -4,15 +4,42 @@
     "pages/logs/logs",
     "pages/users/users",
     "pages/show/show",
-    "pages/edit/edit"
+    "pages/edit/edit", 
+    "pages/new/test",
+    "pages/new/test2",
+    "pages/posts/posts"
+
 
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "Lighter",
     "navigationBarTextStyle":"black"
   },
+
+  "tabBar": {
+    "color": "#848484",
+    "selectedColor": "#333745",
+    "borderStyle":"white",
+    "list": [{
+      "selectedIconPath": "images/posts_select.png",
+      "iconPath": "images/posts.png",
+      "pagePath": "pages/posts/posts",
+      "text": "心情"
+    }, {
+      "selectedIconPath": "images/add_select.png",
+      "iconPath": "images/add.png",
+      "pagePath": "pages/new/test",
+      "text": "记录"
+    }, {
+      "selectedIconPath": "images/profile_select.png",
+      "iconPath": "images/profile.png",
+      "pagePath": "pages/users/users",
+      "text": "个人"
+    }]
+  },
+
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }
