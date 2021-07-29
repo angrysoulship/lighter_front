@@ -1,0 +1,39 @@
+/* pages/new/test.wxss */
+.mainView {
+  width: 100%;
+  height: 100%;
+}
+
+.bodyView {
+  margin: 200rpx 7rpx;
+  padding: 7rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #848484;
+  margin-bottom: 50rpx;
+}
+
+.scrollView {
+  width: 100%;
+  white-space: nowrap; 
+  margin-bottom: 30rpx;
+}
+
+.emojiScroll {
+  display: inline-flex;
+}
+
+.emojiImage {
+  width: 100rpx;
+  height: 200rpx;
+  padding: 4rpx;
+  margin: 4rpx 10rpx;
+}
