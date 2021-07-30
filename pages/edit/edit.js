@@ -48,7 +48,7 @@ Page({
       data: {posts: post},
       success: res => {
         console.log(res)
-        wx.redirectTo({
+        wx.switchTab({
           url: '/pages/users/users',
         });
       }

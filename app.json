@@ -1,18 +1,44 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/logs/logs",
+    "pages/create/create",
+    "pages/user/user",
     "pages/users/users",
     "pages/show/show",
-    "pages/edit/edit",
-    "pages/new/new"
+    "pages/edit/edit", 
+    "pages/new/test",
+    "pages/new/test2",
+    "pages/posts/posts"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Weixin",
+    "navigationBarTitleText": "Lighter",
     "navigationBarTextStyle":"black"
   },
+
+  "tabBar": {
+    "color": "#848484",
+    "selectedColor": "#333745",
+    "borderStyle":"white",
+    "list": [{
+      "selectedIconPath": "images/posts_select.png",
+      "iconPath": "images/posts.png",
+      "pagePath": "pages/index/index",
+      "text": "心情"
+    }, {
+      "selectedIconPath": "images/add_select.png",
+      "iconPath": "images/add.png",
+      "pagePath": "pages/create/create",
+      "text": "记录"
+    }, {
+      "selectedIconPath": "images/profile_select.png",
+      "iconPath": "images/profile.png",
+      "pagePath": "pages/user/user",
+      "text": "个人"
+    }]
+  },
+
   "style": "v2",
   "sitemapLocation": "sitemap.json"
 }

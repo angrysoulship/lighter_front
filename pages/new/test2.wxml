@@ -1,0 +1,24 @@
+
+<!--pages/new/test2.wxml-->
+<view class="mainView">
+  <view class="bodyView">
+    <view class="dateAndWeather">
+      <text>7月29日</text>
+      <text>晴</text>
+    </view>
+    <view class="emojiCircle">
+      <!-- <view class="selectedEmoji"> -->
+        <image class="emojiImage" src="https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/angryEmoji.png" mode=""></image>
+      <!-- </view> -->
+    </view>
+
+    <view class="card">
+      <text class="EmojiLabel">好气!</text>
+      <view class="textarea-wrp">
+        <textarea placeholder="Write more.." placeholder-style="color: #CCCCCC;" auto-focus="true" bindblur="bindTextAreaBlur" bindinput="changeTextValue" cursor-spacing="90" auto-height />
+      </view>
+    </view>
+
+    <button class="mini-btn" type="primary" size="mini">提交</button>
+  </view>
+</view>
