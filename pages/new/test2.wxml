@@ -15,7 +15,7 @@
     <view class="card">
       <text class="EmojiLabel">好气!</text>
       <view class="textarea-wrp">
-        <textarea placeholder="Write more.." placeholder-style="color: #CCCCCC;" auto-focus="true" bindblur="bindTextAreaBlur" bindinput="textAreaInput" cursor-spacing="90" auto-height />
+        <textarea placeholder="Write more.." placeholder-style="color: #CCCCCC;" auto-focus="true" bindblur="bindTextAreaBlur" bindinput="changeTextValue" cursor-spacing="90" auto-height />
       </view>
     </view>
 

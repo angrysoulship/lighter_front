@@ -8,6 +8,11 @@ Page({
 
   },
 
+  changeTextValue: function (e) {
+    // console.log(e.detail.value)
+    let post = e.detail.value
+    this.setData({post})
+  },
   /**
    * 生命周期函数--监听页面加载
    */
