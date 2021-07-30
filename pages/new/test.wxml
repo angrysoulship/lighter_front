@@ -3,9 +3,9 @@
   <view class="bodyView">
     <text class="centerTitle">你现在是什么心情呢？</text>
     <!-- 重点EmojiScrollView -->
-    <scroll-view scroll-x="true" scroll-with-animation="true" class="scrollView">
+    <scroll-view scroll-x="true" scroll-with-animation="true" class="scrollView" scroll-left="{{scrollLeft}}rpx">
       <view wx:for="{{emojis}}" class="emojiScroll" wx:key="id" >
-        <image class="emojiImage" src="{{item.url}}" mode="aspectFill" bindtap="tabSelect" data-name-id="{{item}}"></image>
+        <image class="emojiImage {{index==tabCur?'tab-on':''}}" src="{{item.url}}" mode="aspectFill" bindtap="tabSelect" data-name-id="{{item}}"></image>
       </view>
     </scroll-view>
     <!-- 结束重点EmojiScrollView -->
