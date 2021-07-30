@@ -41,6 +41,12 @@
           "pathName": "pages/posts/posts",
           "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/create/create",
+          "pathName": "pages/create/create",
+          "query": "",
+          "scene": null
         }
       ]
     }
