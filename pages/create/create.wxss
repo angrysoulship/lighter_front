@@ -1,6 +1,5 @@
 .bodyView {
-  margin: 200rpx 7rpx;
-  padding: 7rpx;
+  margin: 200rpx 12rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -52,8 +51,10 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   width: 90%;
   margin: 30rpx;
+  color: #848484;
 }
 
 .card {
@@ -88,4 +89,31 @@ textarea {
 .textarea-wrp {
   margin: 24rpx 0;
   color: #848484;
+}
+
+.back-btn {
+  width:90%;
+  display: flex;
+  justify-content: flex-start;
+  color: #848484;
+  cursor: pointer;
+  margin-bottom: 40rpx;
+}
+
+.dateSelect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.picker{
+  padding: 3px;
+  background-color: #FFFFFF;
+  box-shadow: 0 1rpx 2rpx 1rpx #848484;
+  border-radius: 4px;
+  width: 180rpx;
+  height: 25rpx;
+  font-size: 12px;
+  text-align: center;
 }
