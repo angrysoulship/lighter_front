@@ -31,6 +31,8 @@
           "scene": null
         },
         {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
           "name": "pages/new/test2",
           "pathName": "pages/new/test2",
           "query": "",
