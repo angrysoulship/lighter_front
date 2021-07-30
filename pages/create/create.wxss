@@ -1,1 +1,91 @@
-/* pages/create/create.wxss */
+.bodyView {
+  margin: 200rpx 7rpx;
+  padding: 7rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #848484;
+  margin-bottom: 50rpx;
+}
+
+.scrollView {
+  width: 100%;
+  white-space: nowrap; 
+  margin-bottom: 50rpx;
+}
+
+.tab-on {
+  border-bottom: 6rpx solid #FFC95A !important;
+}
+
+.emojiScroll {
+  display: inline-flex;
+}
+
+.emojiImage {
+  width: 120rpx;
+  height: 240rpx;
+  padding: 4rpx;
+  margin: 4rpx 10rpx;
+}
+
+.emojiBorder {
+  width: 80px;
+  height: 80px;
+  margin-top: -160rpx;
+  border: #FF7779 solid 3px;
+  border-radius: 100%;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dateAndWeather {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 90%;
+  margin: 30rpx;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30rpx;
+  width: 90%;
+  height: fit-content;
+  min-height: 150px;
+  border-radius: 8px;
+  border: solid 1px;
+  border-color: #FF7779;
+  padding: 12rpx;
+}
+
+.emojiImageChoosen {
+  height: 85%;
+  width: 85%;
+}
+
+.emojiLabel {
+  margin-top: 25rpx;
+}
+
+textarea {
+  caret-color: #FF7779;
+  text-align: center;
+}
+
+.textarea-wrp {
+  margin: 24rpx 0;
+  color: #848484;
+}

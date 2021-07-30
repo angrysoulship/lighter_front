@@ -1,2 +1,36 @@
-<!--pages/create/create.wxml-->
-<text>pages/create/create.wxml</text>
+
+<view  wx:if="{{step == 0}}" class="bodyView">
+  <text class="centerTitle">你现在是什么心情呢？</text>
+  
+  <!-- 开始EmojiScrollView -->
+  <scroll-view scroll-x="true" scroll-with-animation="true" class="scrollView" scroll-left="{{scrollLeft}}rpx">
+    <view wx:for="{{emojis.items}}" class="emojiScroll" wx:key="id" >
+      <image class="emojiImage {{index === emojis.active ? 'tab-on' : ''}}" src="{{item.url}}" mode="aspectFill" bindtap="tabSelect" data-name-id="{{item}}"></image>
+    </view>
+  </scroll-view>
+
+  <!-- 结束EmojiScrollView -->
+  <view class="moodAxies"></view>
+  <button bindtap="changeView" class="mini-btn" type="primary" size="mini">提交</button>
+</view>
+
+<view wx:if="{{step == 1}}" class="bodyView">
+  <view class="dateAndWeather">
+      <text>7月29日</text>
+      <text>晴</text>
+  </view>
+
+  <view class="card">
+    <view class="emojiBorder">
+      <!-- <view class="selectedEmoji"> -->
+        <image class="emojiImageChoosen" src="{{emojis.items[emojis.active].emojiUrl}}" mode=""></image>
+      <!-- </view> -->
+    </view>
+    <text class="emojiLabel">{{emojis.items[emojis.active].cnName}}</text>
+    <view class="textarea-wrp">
+      <textarea placeholder="Write more.." placeholder-style="color: #CCCCCC;" auto-focus="true" bindblur="bindTextAreaBlur" bindinput="changeTextValue" cursor-spacing="90" auto-height />
+    </view>
+  </view>
+
+  <button class="mini-btn" type="primary" size="mini">提交</button>
+</view>
