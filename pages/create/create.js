@@ -105,9 +105,15 @@ Page({
       date: e.detail.value
     })
   },
+
+  changeTextValue: function (e) {
+    console.log(e.detail.value)
+    let post = e.detail.value
+    this.setData({post})
+  },
   
   onLoad: function (options) {
-
+   
   },
 
   /**

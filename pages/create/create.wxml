@@ -1,4 +1,4 @@
-
+<!-- view1 -->
 <view  wx:if="{{step == 0}}" class="bodyView">
   <text class="centerTitle">你现在是什么心情呢？</text>
   
@@ -13,7 +13,9 @@
   <view class="moodAxies"></view>
   <button bindtap="changeView" class="mini-btn" type="primary" size="mini">提交</button>
 </view>
+<!-- view1 -->
 
+<!-- view2 -->
 <view wx:if="{{step == 1}}" class="bodyView">
   <view class="back-btn"> 
     <text bindtap="goBack"> Back </text>  
@@ -22,7 +24,7 @@
     <view class="dateSelect">
       <text>日期</text>
       <view class="section">
-        <picker mode="date" value="{{date}}" start="2021-08-06" end="2022-12-31" bindchange="bindDateChange">
+        <picker mode="date" value="{{date}}" start="2021-01-01" end="2022-12-31" bindchange="bindDateChange">
           <view class="picker">
             {{date}}
           </view>
@@ -40,9 +42,10 @@
       <!-- </view> -->
     </view>
     <text class="emojiLabel">{{emojis.items[emojis.active].cnName}}</text>
-    <view class="textarea-wrp">
+    <view class="textarea-wrp"> 
       <textarea placeholder="Write more.." placeholder-style="color: #CCCCCC;" auto-focus="true" bindblur="bindTextAreaBlur" bindinput="changeTextValue" cursor-spacing="90" auto-height />
     </view>
   </view>
   <button class="mini-btn" type="primary" size="mini">提交</button>
 </view>
+<!-- view2 -->
