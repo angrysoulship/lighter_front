@@ -9,3 +9,4 @@
 <h2>{{posts[0].text}}</h2>
 <h2>{{posts[0].id}}</h2>
 <h1 bindtap="myProfile">me</h1>
+<h1 bindtap="newPost">create</h1>

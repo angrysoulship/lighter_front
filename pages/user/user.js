@@ -80,23 +80,6 @@ Page({
     }
   },
 
-  login: function () {
-    wx.login({
-      success (res) {
-        if (res.code) {
-          // Send a network request
-          wx.request({
-            url: 'https://test.com/onLogin',
-            data: {
-              code: res.code
-            }
-          })
-        } else {
-          console.log('Login failed' + res.errMsg)
-        }
-      }
-    })
-  },
 
   onLoad: function () {
     this.setData({

@@ -118,13 +118,13 @@ Page({
     console.log('date is',this.data.date)
     console.log('emoji id is', this.data.emojis.active)
     console.log('text is', this.data.currentText)
-    console.log('user id', app.globalData.user.id)
+    console.log('user id', this.data.user.id)
 
     let post = {
       mood: this.data.emojis.active,
       text: this.data.currentText,
       date: this.data.date,
-      user_id: app.globalData.user.id
+      user_id: this.data.user.id
     }
 
     wx.request({
@@ -140,8 +140,12 @@ Page({
       }
     })
   },
-  onLoad: function (options) {
 
+  onLoad: function () {
+    console.log(app.data)
+    this.setData({
+      user: app.globalData.user
+    })
   },
 
   /**
