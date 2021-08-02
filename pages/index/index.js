@@ -47,6 +47,13 @@ Page({
     })
   },
 
+  myProfile: function(){
+    wx.switchTab({
+      url: '/pages/user/user',
+    })
+
+  },
+
   onLoad() {
     const user = wx.getStorageSync('user');
     if (user) this.setData({user})
