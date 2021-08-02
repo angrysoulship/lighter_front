@@ -1,3 +1,4 @@
+
 Page({
   data: {
     tabCur: 0,

@@ -2,5 +2,5 @@
   <button bindtap="getUserProfile">Login</button>
 </view>
 
-<h1>{{user.wechat_name}}</h1>
-<h1>{{user.id}}</h1>
+<h1>{{user_info.nickName}}</h1>
+<h1>{{user_info.id}}</h1>
