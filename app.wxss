@@ -12,3 +12,12 @@
 .text {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+
+page {
+  /* 颜色类 */
+  --color-purple: #595A79;
+  --color-darkPurple: #434260;
+  --color-beige: #FEE4D2;
+  --color-lightBeige: #FFF0EA;
+  --color-gray: #AAABB1
+}
