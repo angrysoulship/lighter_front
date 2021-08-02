@@ -5,9 +5,10 @@
   <view class="reportView" >
     <view class="profileCard">
       <view class="userAvatar">
-        <image src="" mode=""></image>
+        <image src="{{user.wechat_avatar}}" mode=""></image>
       </view>
       <text class="emojiLabel">你好！</text>
+      <h1>{{user.nickname}}</h1>
     </view>
   
   <!-- 心情分布栏 -->
