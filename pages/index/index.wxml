@@ -1,3 +1,6 @@
 <view class="container">
   <button bindtap="getUserProfile">Login</button>
 </view>
+
+<h1>{{user.nickName}}</h1>
+<h1>{{user.province}}</h1>
