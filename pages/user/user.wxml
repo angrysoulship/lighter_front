@@ -1,2 +1,79 @@
 <!--pages/user/user.wxml-->
-<text>pages/user/user.wxml</text>
+<view class="userView" >
+  <!-- 用户头像栏 -->
+    <view class="profileCard">
+      <view class="userAvatar">
+        <image src="{{user.wechat_avatar}}" mode=""></image>
+      </view>
+      <text class="emojiLabel">你好！</text>
+      <h1>{{user.nickname}}</h1>
+    </view>
+  
+  <!-- 心情分布栏 -->
+    <view class="reportCard">
+      <text class="centerTitle">心情分布</text>
+      <view class="pieChart">
+          <image class="emojiImage" src="{{emojis.items[0].emojiUrl}}" mode=""></image>
+          <text> 60% </text>
+          <image class="emojiImage" src="{{emojis.items[2].emojiUrl}}" mode=""></image>
+          <text> 30% </text>
+          <image class="emojiImage" src="{{emojis.items[1].emojiUrl}}" mode=""></image>
+          <text> 10% </text>
+      </view>
+    </view>
+
+  <!-- 一周心情栏 -->
+    <view class="reportCard">
+      <text class="centerTitle">一周心情</text>
+      <view class="weeklyChart">
+        <view class="dailyChart">
+          <text> Sun </text>
+          <image class="emojiImage" src="{{emojis.items[0].emojiUrl}}" mode=""></image>
+        </view>
+        <view class="dailyChart">
+          <text> Mon </text>
+          <image class="emojiImage" src="{{emojis.items[1].emojiUrl}}" mode=""></image>
+        </view>
+        <view class="dailyChart">
+          <text> Tue </text>
+          <image class="emojiImage" src="{{emojis.items[2].emojiUrl}}" mode=""></image>
+        </view>
+        <view class="dailyChart">
+          <text> Wed </text>
+          <image class="emojiImage" src="{{emojis.items[3].emojiUrl}}" mode=""></image>
+        </view>
+        <view class="dailyChart">
+          <text> Thu </text>
+          <image class="emojiImage" src="{{emojis.items[4].emojiUrl}}" mode=""></image>
+        </view>
+        <view class="dailyChart">
+          <text> Fri </text>
+          <image class="emojiImage" src="{{emojis.items[5].emojiUrl}}" mode=""></image>
+        </view>
+        <view class="dailyChart">
+          <text> Sat </text>
+          <image class="emojiImage" src="{{emojis.items[6].emojiUrl}}" mode=""></image>
+        </view>
+      </view>
+      
+    </view>
+
+  <!-- 建议栏 -->
+    <view class="suggestionSector">
+      <view class="suggestionCard">
+        <text class="centerTitle">帮你开心起来</text>
+        <view class="positiveActionCard">
+          <image class="actionIcon" src="" mode=""></image>
+          <text>计划假期</text>
+        </view>
+      </view>
+      <view class="suggestionCard">
+        <text class="centerTitle">试试减少这些</text>
+        <view class="negativeActionCard" b>
+          <image class="actionIcon" src="" mode="" ></image>
+          <text>垃圾食品</text>
+        </view>
+      </view>
+    </view>
+</view>
+

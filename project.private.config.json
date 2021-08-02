@@ -31,8 +31,6 @@
           "scene": null
         },
         {
-          "name": "pages/index/index",
-          "pathName": "pages/index/index",
           "name": "pages/new/test2",
           "pathName": "pages/new/test2",
           "query": "",
@@ -47,6 +45,18 @@
         {
           "name": "pages/create/create",
           "pathName": "pages/create/create",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "pages/user/user",
+          "pathName": "pages/user/user",
           "query": "",
           "scene": null
         }

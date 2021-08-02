@@ -1,4 +1,5 @@
 <view class="container">
+
     <button class="" bindtap="getUserProfile">Login</button>
 
     <!-- CalendarView -->
@@ -110,4 +111,9 @@
     </view>
     <!-- ListsView -->
 </view>
+
+
+  <button bindtap="getUserProfile">Login</button>
+</view>
+
 

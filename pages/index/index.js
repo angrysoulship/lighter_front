@@ -80,14 +80,40 @@ Page({
         let user = this.data.user;
         let userInfo = res.userInfo
         let newUser = { ...user, ...userInfo}
-        console.log('all user',newUser)
+        // console.log('res',res)
+        // console.log('globaldata', app.globalData)
         this.setData({
-          user: newUser,
+          user_info: newUser,
           hasUserInfo: true
+        })
+        let user_id = app.globalData.user.id
+        // console.log('user_id', user_id)
+        wx.request({
+          url: `http://localhost:3000/api/v1/users/${user_id}`,
+          method: "PUT",
+          data: {
+            userinfo: res.userInfo
+          },
+          success: function (res) {
+            console.log('res', res)
+          }
+        })
+        
+        let page = this
+        wx.request({
+          url: `http://localhost:3000/api/v1/users/${user_id}`,
+          method: "GET",
+          success: function (res) {
+            let info = res.data
+            // console.log('res1', res.data)
+            let posts = info.posts
+            page.setData({posts: posts})
+          }
         })
       }
     })
   },
+
 
   getCalendarView:function (e) {
     console.log(e)
@@ -150,6 +176,23 @@ Page({
       });
     }
   },
+
+  myProfile: function(){
+    wx.switchTab({
+      url: '/pages/user/user',
+    })
+
+  },
+
+  onLoad() {
+    const user = wx.getStorageSync('user');
+    if (user) this.setData({user})
+    console.log('globaldata', app.globalData)
+    console.log('this user is ', app.globalData.user.id)
+
+
+  }
+
 
   // 绘制当月天数占的格子，并把它放到days数组中
   calculateDays:function(year, month) {
