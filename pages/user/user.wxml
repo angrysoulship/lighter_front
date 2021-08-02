@@ -1,8 +1,6 @@
 <!--pages/user/user.wxml-->
-
-
+<view class="userView" >
   <!-- 用户头像栏 -->
-  <view class="reportView" >
     <view class="profileCard">
       <view class="userAvatar">
         <image src="{{user.wechat_avatar}}" mode=""></image>
@@ -15,11 +13,11 @@
     <view class="reportCard">
       <text class="centerTitle">心情分布</text>
       <view class="pieChart">
-          <image class="emojiImageReport" src="{{emojis.items[0].emojiUrl}}" mode=""></image>
+          <image class="emojiImage" src="{{emojis.items[0].emojiUrl}}" mode=""></image>
           <text> 60% </text>
-          <image class="emojiImageReport" src="{{emojis.items[2].emojiUrl}}" mode=""></image>
+          <image class="emojiImage" src="{{emojis.items[2].emojiUrl}}" mode=""></image>
           <text> 30% </text>
-          <image class="emojiImageReport" src="{{emojis.items[1].emojiUrl}}" mode=""></image>
+          <image class="emojiImage" src="{{emojis.items[1].emojiUrl}}" mode=""></image>
           <text> 10% </text>
       </view>
     </view>
@@ -30,31 +28,31 @@
       <view class="weeklyChart">
         <view class="dailyChart">
           <text> Sun </text>
-          <image class="emojiImageReport" src="{{emojis.items[0].emojiUrl}}" mode=""></image>
+          <image class="emojiImage" src="{{emojis.items[0].emojiUrl}}" mode=""></image>
         </view>
         <view class="dailyChart">
           <text> Mon </text>
-          <image class="emojiImageReport" src="{{emojis.items[1].emojiUrl}}" mode=""></image>
+          <image class="emojiImage" src="{{emojis.items[1].emojiUrl}}" mode=""></image>
         </view>
         <view class="dailyChart">
           <text> Tue </text>
-          <image class="emojiImageReport" src="{{emojis.items[2].emojiUrl}}" mode=""></image>
+          <image class="emojiImage" src="{{emojis.items[2].emojiUrl}}" mode=""></image>
         </view>
         <view class="dailyChart">
           <text> Wed </text>
-          <image class="emojiImageReport" src="{{emojis.items[3].emojiUrl}}" mode=""></image>
+          <image class="emojiImage" src="{{emojis.items[3].emojiUrl}}" mode=""></image>
         </view>
         <view class="dailyChart">
           <text> Thu </text>
-          <image class="emojiImageReport" src="{{emojis.items[4].emojiUrl}}" mode=""></image>
+          <image class="emojiImage" src="{{emojis.items[4].emojiUrl}}" mode=""></image>
         </view>
         <view class="dailyChart">
           <text> Fri </text>
-          <image class="emojiImageReport" src="{{emojis.items[5].emojiUrl}}" mode=""></image>
+          <image class="emojiImage" src="{{emojis.items[5].emojiUrl}}" mode=""></image>
         </view>
         <view class="dailyChart">
           <text> Sat </text>
-          <image class="emojiImageReport" src="{{emojis.items[6].emojiUrl}}" mode=""></image>
+          <image class="emojiImage" src="{{emojis.items[6].emojiUrl}}" mode=""></image>
         </view>
       </view>
       

@@ -1,6 +1,6 @@
 /* pages/user/user.wxss */
 
-.reportView {
+.userView {
   margin: 20rpx 12rpx;
   display: flex;
   flex-direction: column;
@@ -16,27 +16,6 @@
   margin-bottom: 50rpx;
 }
 
-.scrollView {
-  width: 100%;
-  white-space: nowrap; 
-  margin-bottom: 50rpx;
-}
-
-.tab-on {
-  border-bottom: 6rpx solid #FFC95A !important;
-}
-
-.emojiScroll {
-  display: inline-flex;
-}
-
-.emojiImage {
-  width: 120rpx;
-  height: 240rpx;
-  padding: 4rpx;
-  margin: 4rpx 10rpx;
-}
-
 .userAvatar {
   width: 60px;
   height: 60px;
@@ -47,16 +26,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.dateAndWeather {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  width: 90%;
-  margin: 30rpx;
-  color: #848484;
 }
 
 .profileCard {
@@ -200,48 +169,11 @@
   padding: 12rpx;
 }
 
-.emojiImageReport {
+.emojiImage {
   height: 60rpx; 
   width: 60rpx;
 }
 
 .emojiLabel {
   margin-top: 25rpx;
-}
-
-textarea {
-  caret-color: #FF7779;
-  text-align: center;
-}
-
-.textarea-wrp {
-  margin: 24rpx 0;
-  color: #848484;
-}
-
-.back-btn {
-  width:90%;
-  display: flex;
-  justify-content: flex-start;
-  color: #848484;
-  cursor: pointer;
-  margin-bottom: 40rpx;
-}
-
-.dateSelect {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-.picker{
-  padding: 3px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1rpx 2rpx 1rpx #848484;
-  border-radius: 4px;
-  width: 180rpx;
-  height: 25rpx;
-  font-size: 12px;
-  text-align: center;
 }
