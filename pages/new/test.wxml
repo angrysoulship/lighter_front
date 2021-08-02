@@ -2,13 +2,13 @@
 <view class="mainView">
   <view class="bodyView">
     <text class="centerTitle">你现在是什么心情呢？</text>
-    <!-- 重点EmojiScrollView -->
+    <!-- 开始EmojiScrollView -->
     <scroll-view scroll-x="true" scroll-with-animation="true" class="scrollView" scroll-left="{{scrollLeft}}rpx">
       <view wx:for="{{emojis}}" class="emojiScroll" wx:key="id" >
         <image class="emojiImage {{index==tabCur?'tab-on':''}}" src="{{item.url}}" mode="aspectFill" bindtap="tabSelect" data-name-id="{{item}}"></image>
       </view>
     </scroll-view>
-    <!-- 结束重点EmojiScrollView -->
+    <!-- 结束EmojiScrollView -->
     <view class="moodAxies"></view>
     <button bindtap="enterPostDetailPage" class="mini-btn" type="primary" size="mini">提交</button>
   </view>

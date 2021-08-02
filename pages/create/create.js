@@ -1,16 +1,145 @@
-// pages/create/create.js
+// pages/new/test.js
+const app = getApp()
 Page({
-
+ 
   /**
    * 页面的初始数据
    */
   data: {
-
+    tabCur: 0,
+    step: 0,
+    emojis: {
+      active: 0,
+      items: [{
+        name:'delighted',
+        cnName: '开心',
+        id: 0,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/delighted.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/delightedEmoji.png'
+      },
+      {
+        name:'excited',
+        cnName: '上头！',
+        id: 1,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/excited.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/excitedEmoji.png'
+      },
+      {
+        name:'angry',
+        cnName: '好气！',
+        id: 2,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/angry.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/angryEmoji.png'
+      },
+      {
+        name:'annoyed',
+        cnName: '好烦！',
+        id: 3,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/annoyed.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/annoyedEmoji.png'
+      },
+      {
+        name:'shameful',
+        cnName: '好失败',
+        id: 4,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/shameful.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/shamefulEmoji.png'
+      },
+      {
+        name:'worried',
+        cnName: '担心',
+        id: 5,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/worried.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/worriedEmoji.png'
+      },
+      {
+        name:'sad',
+        cnName: '难过',
+        id: 6,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/sad.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/sadEmoji.png'
+      },
+      {
+        name:'tired',
+        cnName: '累了',
+        id: 7,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/tired.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/tiredEmoji.png'
+      },
+      {
+        name:'relaxed',
+        cnName: '放松',
+        id: 8,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/relaxed.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/relaxedEmoji.png'
+      },
+      {
+        name:'serene',
+        cnName: '平静',
+        id: 9,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/serene.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/sereneEmoji.png'
+      }]
+    }
   },
 
-  /**
-   * 生命周期函数--监听页面加载
-   */
+  tabSelect(e) {
+    this.setData({
+      'emojis.active': e.currentTarget.dataset.nameId.id,
+      scrollLeft: (e.currentTarget.dataset.nameId.id - 2) * 150
+    })
+    // console.log(e.currentTarget.dataset.nameId)
+  },
+
+  changeView: function (e) {
+    console.log(e)
+    this.setData({step: 1})
+  },
+
+  goBack: function(e) {
+    this.setData({step: 0})
+  },
+
+  bindDateChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
+  },
+  
+  bindTextAreaBlur(e) {
+    console.log(e.detail.value)
+    this.setData({
+      currentText: e.detail.value
+    })
+  },
+
+  createEmoji() {
+    console.log('date is',this.data.date)
+    console.log('emoji id is', this.data.emojis.active)
+    console.log('text is', this.data.currentText)
+    console.log('user id', app.globalData.user.id)
+
+    let post = {
+      mood: this.data.emojis.active,
+      text: this.data.currentText,
+      date: this.data.date,
+      user_id: app.globalData.user.id
+    }
+
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${app.globalData.user.id}/posts`,
+      method: "POST",
+      data: {posts: post},
+      success: res => {
+        // console.log(res)
+        wx.hideLoading();
+        wx.switchTab({
+          url: '/pages/index/index',
+        });
+      }
+    })
+  },
   onLoad: function (options) {
 
   },

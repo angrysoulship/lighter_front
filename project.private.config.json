@@ -43,14 +43,14 @@
           "scene": null
         },
         {
-          "name": "pages/index/index",
-          "pathName": "pages/index/index",
+          "name": "pages/create/create",
+          "pathName": "pages/create/create",
           "query": "",
           "scene": null
         },
         {
-          "name": "pages/create/create",
-          "pathName": "pages/create/create",
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
           "query": "",
           "scene": null
         }

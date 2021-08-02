@@ -1,8 +1,4 @@
 /* pages/new/test2.wxss */
-.mainView {
-  width: 100%;
-  height: 100%;
-}
 
 .bodyView {
   position: relative;
@@ -54,10 +50,9 @@ text {
   justify-content: center;
 }
 
-.emojiImage {
+.emojiImageChoosen {
   height: 85%;
   width: 85%;
-
 }
 
 textarea {
@@ -73,6 +68,5 @@ textarea {
 .angry {
   width: 20px;
   height: 20px;
-  
 }
 
