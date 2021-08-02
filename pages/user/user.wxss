@@ -1,1 +1,247 @@
 /* pages/user/user.wxss */
+
+.reportView {
+  margin: 20rpx 12rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.centerTitle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #848484;
+  margin-bottom: 50rpx;
+}
+
+.scrollView {
+  width: 100%;
+  white-space: nowrap; 
+  margin-bottom: 50rpx;
+}
+
+.tab-on {
+  border-bottom: 6rpx solid #FFC95A !important;
+}
+
+.emojiScroll {
+  display: inline-flex;
+}
+
+.emojiImage {
+  width: 120rpx;
+  height: 240rpx;
+  padding: 4rpx;
+  margin: 4rpx 10rpx;
+}
+
+.userAvatar {
+  width: 60px;
+  height: 60px;
+  margin-top: -110rpx;
+  border: #7a7676 1px;
+  border-radius: 100%;
+  background-color: rgb(248, 247, 247);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dateAndWeather {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 90%;
+  margin: 30rpx;
+  color: #848484;
+}
+
+.profileCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 60rpx;
+  width: 90%;
+  height: fit-content;
+  min-height: 80px;
+  border-radius: 8px;
+  border: solid 1px;
+  border-color: #f1eaea;
+  padding: 12rpx;
+  box-shadow: 0 5rpx rgba(0, 0, 0, 0.15);
+}
+
+.reportCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 30rpx;
+  width: 90%;
+  height: fit-content;
+  min-height: 150px;
+  border-radius: 8px;
+  border: solid 1px;
+  border-color: #f1eaea;
+  padding: 12rpx;
+  box-shadow: 0 5rpx rgba(0, 0, 0, 0.15);
+}
+
+.suggestionSector {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  /* justify-content: center;
+  align-items: center; */
+  /* margin: 5rpx; */
+  margin: 30rpx;
+  width: 95%;
+  height: fit-content;
+  min-height: 150px;
+  border-radius: 8px;
+  border-color: #f1eaea;
+  /* padding: 12rpx; */
+  
+}
+
+.suggestionCard {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rpx;
+  width: 80%;
+  height: fit-content;
+  min-height: 150px;
+  border: solid 1px;
+  border-radius: 8px;
+  border-color: #f1eaea;
+  padding: 12rpx;
+  box-shadow: 0 5rpx rgba(0, 0, 0, 0.15);
+}
+
+.positiveActionCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 5rpx;
+  width: 90%;
+  height: 80rpx;
+  border-radius: 8px;
+  padding: 16rpx;
+  background-color: #FFC95A;
+}
+
+.negativeActionCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 5rpx;
+  width: 90%;
+  height: 80rpx;
+  border-radius: 8px;
+  padding: 16rpx;
+  background-color: #cccccc;
+}
+
+.actionIcon {
+  height: 40rpx; 
+  width: 40rpx;
+}
+
+.pieChart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 5rpx;
+  width: 90%;
+  height: fit-content;
+  min-height: 150px;
+  border: 1px;
+  border-radius: 8px;
+  border-color: #f1eaea;
+  padding: 12rpx;
+}
+
+.weeklyChart {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 5rpx;
+  width: 90%;
+  height: fit-content;
+  min-height: 150px;
+  border: 1px;
+  border-radius: 8px;
+  border-color: #f1eaea;
+  padding: 12rpx;
+}
+
+.dailyChart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 5rpx;
+  /* width: 90%; */
+  height: fit-content;
+  /* min-height: 150px; */
+  border: 1px;
+  border-radius: 8px;
+  border-color: #f1eaea;
+  padding: 12rpx;
+}
+
+.emojiImageReport {
+  height: 60rpx; 
+  width: 60rpx;
+}
+
+.emojiLabel {
+  margin-top: 25rpx;
+}
+
+textarea {
+  caret-color: #FF7779;
+  text-align: center;
+}
+
+.textarea-wrp {
+  margin: 24rpx 0;
+  color: #848484;
+}
+
+.back-btn {
+  width:90%;
+  display: flex;
+  justify-content: flex-start;
+  color: #848484;
+  cursor: pointer;
+  margin-bottom: 40rpx;
+}
+
+.dateSelect {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.picker{
+  padding: 3px;
+  background-color: #FFFFFF;
+  box-shadow: 0 1rpx 2rpx 1rpx #848484;
+  border-radius: 4px;
+  width: 180rpx;
+  height: 25rpx;
+  font-size: 12px;
+  text-align: center;
+}
