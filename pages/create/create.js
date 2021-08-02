@@ -106,6 +106,12 @@ Page({
       date: e.detail.value
     })
   },
+
+  changeTextValue: function (e) {
+    console.log(e.detail.value)
+    let post = e.detail.value
+    this.setData({post})
+  },
   
   bindTextAreaBlur(e) {
     console.log(e.detail.value)
@@ -141,11 +147,13 @@ Page({
     })
   },
 
+
   onLoad: function () {
     console.log(app.data)
     this.setData({
       user: app.globalData.user
     })
+
   },
 
   /**
