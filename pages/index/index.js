@@ -184,6 +184,12 @@ Page({
 
   },
 
+  newPost: function(){
+    wx.switchTab({
+      url: '/pages/create/create',
+    })
+  },
+
   onLoad() {
     const user = wx.getStorageSync('user');
     if (user) this.setData({user})
