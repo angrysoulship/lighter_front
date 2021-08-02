@@ -3,9 +3,10 @@
   <!-- 用户头像栏 -->
     <view class="profileCard">
       <view class="userAvatar">
-        <image src="{{user_info.avatarUrl}}" mode=""></image>
+        <image src="{{user.wechat_avatar}}" mode=""></image>
       </view>
-      <text class="emojiLabel">你好！"{{user_info.nickName}}"</text>
+      <text class="emojiLabel">你好！</text>
+      <h1>{{user.nickname}}</h1>
     </view>
   
   <!-- 心情分布栏 -->

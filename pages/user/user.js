@@ -1,4 +1,6 @@
 
+const app = getApp()
+
 Page({
   data: {
     tabCur: 0,
@@ -97,20 +99,8 @@ Page({
   },
 
   onLoad: function () {
-    wx.login({
-      success (res) {
-        console.log(res);
-        if (res.code) {
-          wx.request({
-            url: 'http://localhost:3000/api/v1/',
-            data: {
-              code: res.code
-            }
-          })
-        } else {
-          console.log('Login failed' + res.errMsg)
-        }
-      }
+    this.setData({
+      user: app.globalData.user
     })
   }
 })
