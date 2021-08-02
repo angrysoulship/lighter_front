@@ -1,6 +1,7 @@
 // pages/new/test.js
+const app = getApp()
 Page({
-
+ 
   /**
    * 页面的初始数据
    */
@@ -106,6 +107,39 @@ Page({
     })
   },
   
+  bindTextAreaBlur(e) {
+    console.log(e.detail.value)
+    this.setData({
+      currentText: e.detail.value
+    })
+  },
+
+  createEmoji() {
+    console.log('date is',this.data.date)
+    console.log('emoji id is', this.data.emojis.active)
+    console.log('text is', this.data.currentText)
+    console.log('user id', app.globalData.user.id)
+
+    let post = {
+      mood: this.data.emojis.active,
+      text: this.data.currentText,
+      date: this.data.date,
+      user_id: app.globalData.user.id
+    }
+
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${app.globalData.user.id}/posts`,
+      method: "POST",
+      data: {posts: post},
+      success: res => {
+        // console.log(res)
+        wx.hideLoading();
+        wx.switchTab({
+          url: '/pages/index/index',
+        });
+      }
+    })
+  },
   onLoad: function (options) {
 
   },

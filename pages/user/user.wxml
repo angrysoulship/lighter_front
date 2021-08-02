@@ -1,5 +1,6 @@
 <!--pages/user/user.wxml-->
 
+
   <!-- 用户头像栏 -->
   <view class="reportView" >
     <view class="profileCard">
@@ -76,3 +77,4 @@
       </view>
     </view>
 </view>
+

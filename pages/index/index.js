@@ -13,10 +13,23 @@ Page({
         let user = this.data.user;
         let userInfo = res.userInfo
         let newUser = { ...user, ...userInfo}
-        console.log('all user',newUser)
+        console.log('res',res)
+        console.log('globaldata', app.globalData)
         this.setData({
-          user: newUser,
+          user_info: newUser,
           hasUserInfo: true
+        })
+        let user_id = app.globalData.user.id
+        console.log('user_id', user_id)
+        wx.request({
+          url: `http://localhost:3000/api/v1/users/${user_id}`,
+          method: "PUT",
+          data: {
+            userinfo: res.userInfo
+          },
+          success: function (res) {
+            console.log('res', res)
+          }
         })
       }
     })
@@ -25,6 +38,7 @@ Page({
   onLoad() {
     const user = wx.getStorageSync('user');
     if (user) this.setData({user})
+    console.log('globaldata', app.globalData)
   }
 
 })

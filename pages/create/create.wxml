@@ -40,9 +40,11 @@
       <!-- </view> -->
     </view>
     <text class="emojiLabel">{{emojis.items[emojis.active].cnName}}</text>
-    <view class="textarea-wrp">
-      <textarea placeholder="Write more.." placeholder-style="color: #CCCCCC;" auto-focus="true" bindblur="bindTextAreaBlur" bindinput="changeTextValue" cursor-spacing="90" auto-height />
-    </view>
+    <form bindsubmit="createEmoji">
+      <view class="textarea-wrp">
+        <textarea placeholder="Write more.." placeholder-style="color: #CCCCCC;" auto-focus="true" bindblur="bindTextAreaBlur" cursor-spacing="90" auto-height />
+      </view>
+      <button form-type="submit" class="mini-btn" type="primary" size="mini">提交</button>
+    </form>
   </view>
-  <button class="mini-btn" type="primary" size="mini">提交</button>
 </view>
