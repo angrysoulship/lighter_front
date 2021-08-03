@@ -17,6 +17,41 @@
 .usermotto {
   margin-top: 200px;
 }
+.landingPages {
+  width: 750rpx;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landingPage {
+  width: 750rpx;
+  height: 1300rpx;
+}
+
+.loginBtn {
+  background-color: var(--color-beige);
+  color: var(--color-purple);
+  border-radius: 18px;
+  width: 250rpx;
+  text-align: center;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 70rpx;
+  opacity: 0.8;
+}
+
+.downBtn {
+ position: fixed;
+ bottom: 160rpx;
+ width: 60rpx;
+ height: 60rpx;
+}
 
 .viewBtns {
   display: flex;
@@ -45,10 +80,10 @@
   flex-direction: column;
   align-items: center;
   margin: auto;
-  
 }
+
 text {
-  color: #848484;
+  color: var(--color-purple);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
@@ -58,6 +93,7 @@ text {
   justify-content: space-between;
   width: 90%;
   margin: 30rpx;
+  font-size: small;
 }
 
 .card {
@@ -69,14 +105,14 @@ text {
 
 .cardBody {
   padding: 12rpx;
-  width: 600rpx;
-  height: 180px;
-  border-radius: 8px;
+  width: 680rpx;
+  height: 200px;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: #aaa 1px 2px 2px;
+  background-color: var(--color-beige);
 }
 .emojiImage {
   width: 120rpx;
@@ -84,6 +120,11 @@ text {
   padding: 4rpx;
   margin: 4rpx 10rpx;
 }
+.emojiLabel {
+  color: var(--color-purple);
+  font-size: small;
+}
+
 .cardEdits {
   padding: 10rpx;
   display: flex;
@@ -95,103 +136,4 @@ text {
 .editIcon {
   width: 70rpx;
   height: 70rpx;
-}
-/* 打卡日历 */
-.all{
-  margin-top: 20rpx;
-}
-
-.all .bar{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin: 30rpx 20rpx;
-  padding: 10rpx;
-}
-
-.all .bar image{
-  width: 50rpx;
-  height: 50rpx;
-}
-
-.all .week{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  padding: 20rpx;
-  padding-left: 40rpx;
-  padding-right: 40rpx;
-  margin: 20rpx;
-  border-radius: 10px;
-  background-color: #acd;
-}
-
-.all .days{
-  margin: 20rpx;
-  padding: 10rpx;
-  border-radius: 10px;
-  background-color: #acd;
-
-}
-
-.all .columns{
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between; 
-}
-
-.all .columns .rows{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-}
-
-.all .columns .rows .cell{
-  width: 84rpx;
-  height: 88rpx;
-  margin: 3rpx;
-  text-align: center;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.count .daynumber{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.count .daynumber .day{
-  margin-top: 50rpx;
-}
-
-.count{
-  margin: 20rpx;
-  padding: 30rpx;
-  display: flex;
-  text-align: center;
-  border-radius: 10px;
-  flex-direction: column;
-  justify-content: center;
-  background-color: #acd;
-  align-items: center;
-}
-
-.count .number{
-  color: red;
-  font-size: 60rpx;
-  background-color: #fff;
-  width: 100rpx;
-  height: 100rpx;
-  border-radius: 50%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 20rpx;
-}
-
-.count text{
-  margin: 10rpx;
 }
