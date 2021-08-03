@@ -22,10 +22,9 @@
           <view class="emojiLabel">
             {{post.text}}
           </view>
-        </view>
-        <view class="cardEdits">
-          <image class="editIcon" bindtap="" src="/images/edit.png" mode="aspectFill"></image>
-          <image class="editIcon" bindtap="deletePost" data-id="{{post.id}}" src="/images/delete.png" mode="aspectFill"></image>
+          <view class="cardEdits">
+            <image class="editIcon" bindtap="deletePost" data-id="{{post.id}}" src="/images/delete.png" mode="aspectFill"></image>
+          </view>
         </view>
       </view>
     </view>
