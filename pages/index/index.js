@@ -114,7 +114,6 @@ Page({
     })
   },
 
-
   getCalendarView:function (e) {
     console.log(e)
     this.setData({step: 1})
@@ -197,7 +196,7 @@ Page({
     console.log('this user is ', app.globalData.user.id)
 
 
-  }
+  },
 
 
   // 绘制当月天数占的格子，并把它放到days数组中

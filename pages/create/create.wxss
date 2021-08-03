@@ -1,5 +1,11 @@
+.mainView {
+ background-color: var(--color-purple);
+ width: full;
+ height: 100%;
+}
+
 .bodyView {
-  margin: 200rpx 12rpx;
+  margin-top: 350rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -10,7 +16,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #848484;
+  color: var(--color-beige);
   margin-bottom: 50rpx;
 }
 
@@ -21,27 +27,48 @@
 }
 
 .tab-on {
-  border-bottom: 6rpx solid #FFC95A !important;
+  background-color: var(--color-darkPurple);
+  border-radius: 20px;
 }
 
 .emojiScroll {
   display: inline-flex;
 }
 
-.emojiImage {
-  width: 120rpx;
+.emojiComponent {
+  width: 150rpx;
   height: 240rpx;
-  padding: 4rpx;
-  margin: 4rpx 10rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.emojiImage {
+  width: 120rpx;
+  height: 120rpx;
+  padding: 10rpx;
+  margin: 4rpx 10rpx;
+}
+.cnName {
+  font-size: small;
+  color: var(--color-beige);
+  margin-top: 10rpx;
+}
+
+.engName {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-size: x-small;
+  color: var(--color-beige);
+  opacity: 0.8;
+  
+}
 .emojiBorder {
   width: 80px;
   height: 80px;
-  margin-top: -160rpx;
-  border: #FF7779 solid 3px;
-  border-radius: 100%;
-  background-color: white;
+  margin-top: -140rpx;
+  border-radius: 20px;
+  background-color: var(--color-darkPurple);
+  /* border: 2px solid var(--color-beige); */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -53,8 +80,9 @@
   justify-content: space-between;
   align-items: center;
   width: 90%;
-  margin: 30rpx;
-  color: #848484;
+  margin: 10rpx 40rpx 40rpx 40rpx;
+  color: var(--color-beige);
+  font-size: small;
 }
 
 .card {
@@ -67,8 +95,9 @@
   height: fit-content;
   min-height: 150px;
   border-radius: 8px;
-  border: solid 1px;
-  border-color: #FF7779;
+  border: solid 2px;
+  border-color:var(--color-beige);
+  background-color: var(--color-beige);
   padding: 12rpx;
 }
 
@@ -79,41 +108,54 @@
 
 .emojiLabel {
   margin-top: 25rpx;
+  color: var(--color-purple);
+  font-weight: 500;
 }
 
 textarea {
-  caret-color: #FF7779;
+  caret-color: var(--color-purple);
   text-align: center;
 }
 
 .textarea-wrp {
   margin: 24rpx 0;
-  color: #848484;
+  color: var(--color-beige);
 }
 
 .back-btn {
-  width:90%;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
-  color: #848484;
+  align-items: flex-start;
+  color: var(--color-beige);
   cursor: pointer;
-  margin-bottom: 40rpx;
+  margin-bottom: 8rpx;
+  margin-left: 40rpx;
+}
+
+.backIcon {
+  width: 50rpx;
+  height: 50rpx;
 }
 
 .dateSelect {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: start;
   align-items: center;
 }
 
 .picker{
-  padding: 3px;
-  background-color: #FFFFFF;
-  box-shadow: 0 1rpx 2rpx 1rpx #848484;
+  margin-left: 6rpx;
+  padding: 2rpx;
+  /* background-color: var(--color-beige); */
+  border: 1px solid var(--color-beige);
   border-radius: 4px;
-  width: 180rpx;
+  width: 160rpx;
   height: 25rpx;
   font-size: 12px;
   text-align: center;
+  color: var(--color-beige);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  
 }

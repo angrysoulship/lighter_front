@@ -11,31 +11,30 @@
     "pages/posts/posts"
   ],
   "window":{
+    "navigationStyle": "custom",
     "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#595A79",
     "navigationBarTitleText": "Lighter",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle":"white"
   },
 
   "tabBar": {
     "color": "#848484",
     "selectedColor": "#333745",
-    "borderStyle":"white",
+    "borderStyle":"black",
+    "backgroundColor": "#595A79",
     "list": [{
-      "selectedIconPath": "images/posts_select.png",
-      "iconPath": "images/posts.png",
-      "pagePath": "pages/index/index",
-      "text": "心情"
+      "selectedIconPath": "images/index_select.png",
+      "iconPath": "images/index.png",
+      "pagePath": "pages/index/index"
     }, {
       "selectedIconPath": "images/add_select.png",
       "iconPath": "images/add.png",
-      "pagePath": "pages/create/create",
-      "text": "记录"
+      "pagePath": "pages/create/create"
     }, {
       "selectedIconPath": "images/profile_select.png",
       "iconPath": "images/profile.png",
-      "pagePath": "pages/user/user",
-      "text": "个人"
+      "pagePath": "pages/user/user"
     }]
   },
 

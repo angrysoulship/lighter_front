@@ -1,54 +1,60 @@
-<!-- view1 -->
-<view  wx:if="{{step == 0}}" class="bodyView">
-  <text class="centerTitle">你现在是什么心情呢？</text>
-  
-  <!-- 开始EmojiScrollView -->
-  <scroll-view scroll-x="true" scroll-with-animation="true" class="scrollView" scroll-left="{{scrollLeft}}rpx">
-    <view wx:for="{{emojis.items}}" class="emojiScroll" wx:key="id" >
-      <image class="emojiImage {{index === emojis.active ? 'tab-on' : ''}}" src="{{item.url}}" mode="aspectFill" bindtap="tabSelect" data-name-id="{{item}}"></image>
-    </view>
-  </scroll-view>
-
-  <!-- 结束EmojiScrollView -->
-  <view class="moodAxies"></view>
-  <button bindtap="changeView" class="mini-btn" type="primary" size="mini">提交</button>
-</view>
-<!-- view1 -->
-
-<!-- view2 -->
-<view wx:if="{{step == 1}}" class="bodyView">
-  <view class="back-btn"> 
-    <text bindtap="goBack"> Back </text>  
-  </view>
-  <view class="dateAndWeather">
-    <view class="dateSelect">
-      <text>日期</text>
-      <view class="section">
-        <picker mode="date" value="{{date}}" start="2021-01-01" end="2022-12-31" bindchange="bindDateChange">
-          <view class="picker">
-            {{date}}
-          </view>
-        </picker>
+<view class="mainView">
+  <!-- view1 -->
+  <view  wx:if="{{step == 0}}" class="bodyView">
+    <text class="centerTitle">你现在是什么心情呢？</text>
+    
+    <!-- 开始EmojiScrollView -->
+    <scroll-view scroll-x="true" scroll-with-animation="true" class="scrollView" scroll-left="{{scrollLeft}}rpx">
+      <view wx:for="{{emojis.items}}" class="emojiScroll" wx:key="id" >
+        <view class="emojiComponent">
+          <image class="emojiImage {{index === emojis.active ? 'tab-on' : ''}}" src="{{item.emojiUrl}}" mode="aspectFill" bindtap="tabSelect" data-name-id="{{item}}"></image>
+          <text class="cnName">{{item.cnName}}</text>
+          <text class="engName">{{item.name}}</text>
+        </view>
       </view>
-    </view>
-    <!-- <text>7月27日</text> -->
-    <view>晴</view>
+    </scroll-view>
+
+    <!-- 结束EmojiScrollView -->
+    <view class="moodAxies"></view>
+    <view bindtap="changeView" class="btn-beige">提交</view>
   </view>
+  <!-- view1 -->
 
-  <view class="card">
-    <view class="emojiBorder">
-      <!-- <view class="selectedEmoji"> -->
-        <image class="emojiImageChoosen" src="{{emojis.items[emojis.active].emojiUrl}}" mode=""></image>
-      <!-- </view> -->
+  <!-- view2 -->
+  <view wx:if="{{step == 1}}" class="bodyView">
+    <view class="back-btn"> 
+      <image bindtap="goBack" class="backIcon" src="/images/back.png" mode="aspectFill"></image>  
     </view>
-    <text class="emojiLabel">{{emojis.items[emojis.active].cnName}}</text>
-
-    <form bindsubmit="createEmoji">
-      <view class="textarea-wrp">
-        <textarea placeholder="Write more.." placeholder-style="color: #CCCCCC;" auto-focus="true" bindblur="bindTextAreaBlur" cursor-spacing="90" auto-height />
+    <view class="dateAndWeather">
+      <view class="dateSelect">
+        <text>日期</text>
+        <view class="section">
+          <picker mode="date" value="{{date}}" start="2021-01-01" end="2022-12-31" bindchange="bindDateChange">
+            <view class="picker">
+              {{date}}
+            </view>
+          </picker>
+        </view>
       </view>
-      <button form-type="submit" class="mini-btn" type="primary" size="mini">提交</button>
-    </form>
+      <view>晴</view>
+    </view>
+
+    <view class="card">
+      <view class="emojiBorder">
+        <!-- <view class="selectedEmoji"> -->
+          <image class="emojiImageChoosen" src="{{emojis.items[emojis.active].emojiUrl}}" mode=""></image>
+        <!-- </view> -->
+      </view>
+      <text class="emojiLabel">{{emojis.items[emojis.active].cnName}}</text>
+
+      <form bindsubmit="createEmoji">
+        <view class="textarea-wrp">
+          <textarea placeholder="Write more.." placeholder-style="color: #595A79; opacity:0.6;" auto-focus="true" bindblur="bindTextAreaBlur" cursor-spacing="90" auto-height />
+        </view>
+      </form>
+    </view>
+    <view form-type="submit" class="btn-beige">提交</view>
   </view>
+  <!-- view2 -->
+
 </view>
-<!-- view2 -->

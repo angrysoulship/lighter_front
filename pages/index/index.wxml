@@ -1,7 +1,5 @@
 <view class="container">
 
-    <button class="" bindtap="getUserProfile">Login</button>
-
     <!-- CalendarView -->
     <view class="calendarView" wx:if="{{step == 1}}">
       <view class="viewBtns">
@@ -112,7 +110,7 @@
     <!-- ListsView -->
 </view>
 
-
+<view>
   <button bindtap="getUserProfile">Login</button>
 </view>
 
