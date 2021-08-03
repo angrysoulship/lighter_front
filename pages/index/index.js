@@ -187,7 +187,6 @@ Page({
     })
   },
 
-
   getCalendarView:function (e) {
     console.log(e)
     this.setData({step: 1})
@@ -208,6 +207,7 @@ Page({
   onReady: function () {
     console.log('Readddy')
   },
+
 
   /**
    * 生命周期函数--监听页面显示

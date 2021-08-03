@@ -13,5 +13,31 @@ page {
   --color-darkPurple: #434260;
   --color-beige: #FEE4D2;
   --color-lightBeige: #FFF0EA;
-  --color-gray: #AAABB1
+  --color-gray: #AAABB1;
+  background-color: var(--color-purple);
+}
+
+/* 按钮们 */
+.btn-purple {
+  background-color: var(--color-purple);
+  color: var(--color-beige);
+  border-radius: 18px;
+  width: 720rpx;
+  text-align: center;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-beige {
+  background-color: var(--color-beige);
+  color: var(--color-purple);
+  border-radius: 18px;
+  width: 720rpx;
+  text-align: center;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
