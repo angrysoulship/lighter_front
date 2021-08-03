@@ -51,9 +51,9 @@
         <view class="textarea-wrp">
           <textarea placeholder="Write more.." placeholder-style="color: #595A79; opacity:0.6;" auto-focus="true" bindblur="bindTextAreaBlur" cursor-spacing="90" auto-height />
         </view>
+         <button form-type="submit" class="btn-purple">提交</button>
       </form>
     </view>
-    <view form-type="submit" class="btn-beige">提交</view>
   </view>
   <!-- view2 -->
 

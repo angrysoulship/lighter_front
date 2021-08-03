@@ -114,7 +114,6 @@ Page({
   },
   
   bindTextAreaBlur(e) {
-    console.log(e.detail.value)
     this.setData({
       currentText: e.detail.value
     })
@@ -125,7 +124,6 @@ Page({
     console.log('emoji id is', this.data.emojis.active)
     console.log('text is', this.data.currentText)
     console.log('user id', this.data.user.id)
-
     let post = {
       mood: this.data.emojis.active,
       text: this.data.currentText,
@@ -138,11 +136,14 @@ Page({
       method: "POST",
       data: {posts: post},
       success: res => {
-        // console.log(res)
+        console.log('a',res)
         wx.hideLoading();
         wx.switchTab({
           url: '/pages/index/index',
         });
+        this.setData({
+          step:0
+        })
       }
     })
   },
