@@ -2,8 +2,8 @@
 <view class="userView" >
   <!-- 用户头像栏 -->
     <view class="profileCard">
-      <view class="userAvatar">
-        <image src="{{user.wechat_avatar}}" mode=""></image>
+      <view >
+        <image class="userAvatar" src="{{user.wechat_avatar}}" mode=""></image>
       </view>
       <text class="emojiLabel">你好！</text>
       <h1>{{user.nickname}}</h1>

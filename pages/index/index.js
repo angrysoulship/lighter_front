@@ -70,7 +70,80 @@ Page({
       month: '12月',
       dates:'31',
       id: 11
-    }]
+    }],
+    emojis: {
+      active: 0,
+      items: [{
+        name:'delighted',
+        cnName: '开心',
+        id: 0,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/delighted.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/delightedEmoji.png'
+      },
+      {
+        name:'excited',
+        cnName: '上头！',
+        id: 1,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/excited.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/excitedEmoji.png'
+      },
+      {
+        name:'angry',
+        cnName: '好气！',
+        id: 2,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/angry.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/angryEmoji.png'
+      },
+      {
+        name:'annoyed',
+        cnName: '好烦！',
+        id: 3,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/annoyed.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/annoyedEmoji.png'
+      },
+      {
+        name:'shameful',
+        cnName: '好失败',
+        id: 4,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/shameful.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/shamefulEmoji.png'
+      },
+      {
+        name:'worried',
+        cnName: '担心',
+        id: 5,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/worried.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/worriedEmoji.png'
+      },
+      {
+        name:'sad',
+        cnName: '难过',
+        id: 6,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/sad.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/sadEmoji.png'
+      },
+      {
+        name:'tired',
+        cnName: '累了',
+        id: 7,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/tired.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/tiredEmoji.png'
+      },
+      {
+        name:'relaxed',
+        cnName: '放松',
+        id: 8,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/relaxed.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/relaxedEmoji.png'
+      },
+      {
+        name:'serene',
+        cnName: '平静',
+        id: 9,
+        url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/serene.png',
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/sereneEmoji.png'
+      }]
+    },
   },
 
   getUserProfile: function (e) {
@@ -123,171 +196,57 @@ Page({
     this.setData({step: 0})
   },
 
-  onLoad: function (options) {
-    this.setData({objectId : options.objectId});
-    const user = wx.getStorageSync('user');
-    if (user) this.setData({user});
-    const date = new Date();
-    const cur_year = date.getFullYear();
-    const cur_month = date.getMonth() + 1;
-    const weeks_ch = ['日', '一', '二', '三', '四', '五', '六'];
-    this.calculateEmptyGrids(cur_year, cur_month);
-    this.calculateDays(cur_year, cur_month);
-    this.onGetSignUp();
-    this.setData({
-      cur_year,
-      cur_month,
-      weeks_ch
+  onLoad: function () {
+    console.log('LOADDDD')
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    console.log('Readddy')
+  },
+
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    let page = this
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${app.globalData.user.id}`,
+      method: "GET",
+      success: function (res) {
+        let info = res.data
+        // console.log('res1', res.data)
+        let posts = info.posts
+        page.setData({posts: posts})
+      }
     })
   },
 
-  // 获取当月共多少天
-  getThisMonthDays:function(year, month){
-    return new Date(year, month, 0).getDate()
-  },
-    
-  // 获取当月第一天星期几
-  getFirstDayOfWeek:function(year, month) {
-    return new Date(Date.UTC(year, month - 1, 1)).getDay();
-  },
-
-  // 计算当月1号前空了几个格子，把它填充在days数组的前面
-  calculateEmptyGrids:function(year, month) {
-    var that = this;
-    //计算每个月时要清零
-    that.setData({days:[]});
-    const firstDayOfWeek = this.getFirstDayOfWeek(year, month);    
-    if (firstDayOfWeek > 0) {
-      for (let i = 0; i < firstDayOfWeek; i++) {
-        var obj  = {
-          date:null,
-          isSign:false
-        }
-        that.data.days.push(obj);
+  deletePost: function(e) {
+    const id = e.currentTarget.dataset.id
+    wx.request({
+      url: `http://localhost:3000/api/v1/posts/${id}`,
+      method: 'DELETE',
+      success: res => {
+        wx.showToast({
+          title: '删除成功',
+        })
       }
-      this.setData({
-        days:that.data.days
-      });
-    //清空
-    } else {
-      this.setData({
-        days: []
-      });
-    }
-  },
-
-  myProfile: function(){
-    wx.switchTab({
-      url: '/pages/user/user',
     })
-
-  },
-
-  newPost: function(){
-    wx.switchTab({
-      url: '/pages/create/create',
+    let page = this
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${app.globalData.user.id}`,
+      method: "GET",
+      success: function (res) {
+        let info = res.data
+        // console.log('res1', res.data)
+        let posts = info.posts
+        page.setData({posts: posts})
+      }
     })
   },
-
-  onLoad() {
-    const user = wx.getStorageSync('user');
-    if (user) this.setData({user})
-    console.log('globaldata', app.globalData)
-    console.log('this user is ', app.globalData.user.id)
-
-
-  },
-
-
-  // 绘制当月天数占的格子，并把它放到days数组中
-  calculateDays:function(year, month) {
-    var that = this;
-    const thisMonthDays = this.getThisMonthDays(year, month);
-    for (let i = 1; i <= thisMonthDays; i++) {
-      var obj = {
-        date: i,
-        isSign: false
-      }
-      that.data.days.push(obj);
-    }
-    this.setData({
-      days:that.data.days
-    });
-  },
-
-  //匹配判断当月与当月哪些日子签到打卡
-  onJudgeSign:function(){
-    var that = this;
-    var signs = that.data.signUp;
-    var daysArr = that.data.days;
-    for (var i=0; i < signs.length;i++){
-      var current = new Date(signs[i].date.replace(/-/g, "/"));
-      var year = current.getFullYear();
-      var month = current.getMonth()+1;
-      var day = current.getDate();
-      day = parseInt(day);
-      for (var j = 0; j < daysArr.length;j++){
-        //年月日相同并且已打卡
-        if (year == that.data.cur_year && month == that.data.cur_month && daysArr[j].date == day && signs[i].isSign == "今日已打卡"){
-          daysArr[j].isSign = true;
-        }
-      }
-    }
-    that.setData({days:daysArr});
-  },
-
-  // 切换控制年月，上一个月，下一个月
-  handleCalendar:function(e) {
-    const handle = e.currentTarget.dataset.handle;
-    const cur_year = this.data.cur_year;
-    const cur_month = this.data.cur_month;
-    if (handle === 'prev') {
-      let newMonth = cur_month - 1;
-      let newYear = cur_year;
-      if (newMonth < 1) {
-        newYear = cur_year - 1;
-        newMonth = 12;
-      }
-      this.calculateEmptyGrids(newYear, newMonth);
-      this.calculateDays(newYear, newMonth);
-      this.onGetSignUp();      
-      this.setData({
-        cur_year: newYear,
-        cur_month: newMonth
-      })
-    } else {
-      let newMonth = cur_month + 1;
-      let newYear = cur_year;
-      if (newMonth > 12) {
-        newYear = cur_year + 1;
-        newMonth = 1;
-      }
-      this.calculateEmptyGrids(newYear, newMonth);
-      this.calculateDays(newYear, newMonth);
-      this.onGetSignUp();      
-      this.setData({
-        cur_year: newYear,
-        cur_month: newMonth
-      })
-    }
-  },
-
-  //获取当前用户该任务的签到数组
-  onGetSignUp:function(){
-    var that = this;
-    var Task_User = Bmob.Object.extend("task_user");
-    var q = new Bmob.Query(Task_User);
-    q.get(that.data.objectId, {
-      success: function (result) {
-        that.setData({
-          signUp : result.get("signUp"),
-          count : result.get("score")
-        });
-        //获取后就判断签到情况
-        that.onJudgeSign();
-      },
-      error: function (object, error) {
-      }
-    });   
-  }
 })

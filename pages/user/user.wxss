@@ -19,7 +19,7 @@
 .userAvatar {
   width: 60px;
   height: 60px;
-  margin-top: -110rpx;
+  margin-top: -100rpx;
   border: #7a7676 1px;
   border-radius: 100%;
   background-color: rgb(248, 247, 247);
@@ -177,3 +177,4 @@
 .emojiLabel {
   margin-top: 25rpx;
 }
+
