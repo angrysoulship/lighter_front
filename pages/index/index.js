@@ -4,73 +4,6 @@ const app = getApp()
 
 Page({
   data: {
-    objectId:'',
-    days:[],
-    signUp:[],
-    cur_year:0,
-    cur_month:0,
-    count:0,
-    step: 0,
-    calendar: [{
-      month: '1月',
-      dates:'31',
-      id: 0
-    },
-    {
-      month: '2月',
-      dates:'28',
-      id: 1
-    },
-    {
-      month: '3月',
-      dates:'31',
-      id: 2
-    },
-    {
-      month: '4月',
-      dates:'30',
-      id: 3
-    },
-    {
-      month: '5月',
-      dates:'31',
-      id: 4
-    },
-    {
-      month: '6月',
-      dates:'30',
-      id: 5
-    },
-    {
-      month: '7月',
-      dates:'31',
-      id: 6
-    },
-    {
-      month: '8月',
-      dates:'31',
-      id: 7
-    },
-    {
-      month: '9月',
-      dates:'30',
-      id: 8
-    },
-    {
-      month: '10月',
-      dates:'31',
-      id: 9
-    },
-    {
-      month: '11月',
-      dates:'30',
-      id: 10
-    },
-    {
-      month: '12月',
-      dates:'31',
-      id: 11
-    }],
     emojis: {
       active: 0,
       items: [{
@@ -78,70 +11,70 @@ Page({
         cnName: '开心',
         id: 0,
         url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/delighted.png',
-        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/delightedEmoji.png'
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v2/delighted.png'
       },
       {
         name:'excited',
         cnName: '上头！',
         id: 1,
         url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/excited.png',
-        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/excitedEmoji.png'
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v2/excited.png'
       },
       {
         name:'angry',
         cnName: '好气！',
         id: 2,
         url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/angry.png',
-        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/angryEmoji.png'
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v2/angry.png'
       },
       {
         name:'annoyed',
         cnName: '好烦！',
         id: 3,
         url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/annoyed.png',
-        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/annoyedEmoji.png'
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v2/annoyed.png'
       },
       {
         name:'shameful',
         cnName: '好失败',
         id: 4,
         url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/shameful.png',
-        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/shamefulEmoji.png'
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v2/shameful.png'
       },
       {
         name:'worried',
         cnName: '担心',
         id: 5,
         url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/worried.png',
-        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/worriedEmoji.png'
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v2/worried.png'
       },
       {
         name:'sad',
         cnName: '难过',
         id: 6,
         url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/sad.png',
-        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/sadEmoji.png'
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v2/sad.png'
       },
       {
         name:'tired',
         cnName: '累了',
         id: 7,
         url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/tired.png',
-        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/tiredEmoji.png'
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v2/tired.png'
       },
       {
         name:'relaxed',
         cnName: '放松',
         id: 8,
         url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/relaxed.png',
-        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/relaxedEmoji.png'
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v2/relaxed.png'
       },
       {
         name:'serene',
         cnName: '平静',
         id: 9,
         url: 'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v1/serene.png',
-        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emojiOnly/sereneEmoji.png'
+        emojiUrl:'https://projectlighter.oss-cn-shenzhen.aliyuncs.com/emoji_v2/serene.png'
       }]
     },
   },
@@ -154,7 +87,7 @@ Page({
         let userInfo = res.userInfo
         let newUser = { ...user, ...userInfo}
         // console.log('res',res)
-        // console.log('globaldata', app.globalData)
+        console.log('globaldata', app.globalData)
         this.setData({
           user_info: newUser,
           hasUserInfo: true
