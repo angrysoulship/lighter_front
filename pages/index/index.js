@@ -117,6 +117,10 @@ Page({
             page.setData({posts: posts})
           }
         })
+
+        wx.switchTab({
+          url: '/pages/create/create',
+        })
       }
     })
   },
