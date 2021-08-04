@@ -96,7 +96,7 @@ Page({
         let user_id = app.globalData.user.id
         // console.log('user_id', user_id)
         wx.request({
-          url: `http://localhost:3000/api/v1/users/${user_id}`,
+          url: `https://lighter-api.wogengapp.cn/api/v1/users/${user_id}`,
           method: "PUT",
           data: {
             userinfo: res.userInfo
@@ -108,7 +108,7 @@ Page({
         
         let page = this
         wx.request({
-          url: `http://localhost:3000/api/v1/users/${user_id}`,
+          url: `https://lighter-api.wogengapp.cn/api/v1/users/${user_id}`,
           method: "GET",
           success: function (res) {
             let info = res.data
@@ -154,7 +154,7 @@ Page({
   onShow: function () {
     let page = this
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${app.globalData.user.id}`,
+      url: `https://lighter-api.wogengapp.cn/api/v1/users/${app.globalData.user.id}`,
       method: "GET",
       success: function (res) {
         let info = res.data
@@ -168,7 +168,7 @@ Page({
   deletePost: function(e) {
     const id = e.currentTarget.dataset.id
     wx.request({
-      url: `http://localhost:3000/api/v1/posts/${id}`,
+      url: `https://lighter-api.wogengapp.cn/api/v1/posts/${id}`,
       method: 'DELETE',
       success: res => {
         wx.showToast({
@@ -178,7 +178,7 @@ Page({
     })
     let page = this
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${app.globalData.user.id}`,
+      url: `https://lighter-api.wogengapp.cn/api/v1/users/${app.globalData.user.id}`,
       method: "GET",
       success: function (res) {
         let info = res.data

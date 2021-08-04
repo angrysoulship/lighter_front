@@ -7,7 +7,7 @@ App({
       success: (res) => {
         // console.log('result are',res.code)
         wx.request({
-          url: 'http://localhost:3000/api/v1/login',
+          url: 'https://lighter-api.wogengapp.cn/api/v1/login',
           method: 'POST',
           data: { code: res.code },
           success: (res) => {

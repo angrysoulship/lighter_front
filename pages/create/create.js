@@ -132,7 +132,7 @@ Page({
     }
 
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${app.globalData.user.id}/posts`,
+      url: `https://lighter-api.wogengapp.cn/api/v1/users/${app.globalData.user.id}/posts`,
       method: "POST",
       data: {posts: post},
       success: res => {
