@@ -20,7 +20,7 @@
     <view>
     </view>
   </view>
-    <image class="emojiInfo" src="../../images/lighter-pos.png"></image>
+    <!-- <image class="emojiInfo" src="../../images/lighter-pos.png"></image> -->
   <!-- view1 -->
 
   <!-- view2 -->
