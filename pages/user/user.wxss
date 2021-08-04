@@ -8,6 +8,7 @@ ec-canvas {
   right: 0;
 }
 .userView {
+
   margin: 140rpx 12rpx 10rpx 12rpx;
   display: flex;
   flex-direction: column;
