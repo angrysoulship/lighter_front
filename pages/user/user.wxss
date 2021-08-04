@@ -1,8 +1,14 @@
 /* pages/user/user.wxss */
-
+ec-canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 .userView {
-
-  margin: 140rpx 12rpx 10rpx 12rpx;
+  margin: 200rpx 12rpx 10rpx 12rpx;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,11 +25,16 @@
   margin-top: 12rpx;
 }
 
+.pieChartTitle {
+  color: var(--color-beige);
+
+}
+
 .centerTitle {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-darkPurple);
+  color: var(--color-beige);
   margin-bottom: 30rpx;
   margin-top: 12rpx;
 }
@@ -63,12 +74,13 @@
   align-items: center;
   margin-bottom: 40rpx;
   width: 90%;
-  height: fit-content;
+  height: 300px;
   min-height: 150px;
   border-radius: 18px;
-  background-color: var(--color-beige);
+  background-color: var(--color-darkPurple);
   padding: 12rpx;
   box-shadow: 0 5rpx rgba(0, 0, 0, 0.15);
+  position: relative;
 }
 
 .suggestionSector {
@@ -91,24 +103,21 @@
   width: 80%;
   height: fit-content;
   min-height: 150px;
-  border: solid 1px;
   border-radius: 8px;
-  border-color: #f1eaea;
   padding: 12rpx;
-  box-shadow: 0 5rpx rgba(0, 0, 0, 0.15);
-  background-color: var(--color-beige);
+  background-color: var(--color-darkPurple);
 }
 
 .positiveActionCard {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 5rpx;
+  margin: 5rpx 12rpx;
   width: 90%;
   height: 80rpx;
   border-radius: 8px;
-  padding: 16rpx;
+  padding: 12rpx;
   background-color:var(--color-purple);
   color: var(--color-beige);
 }
@@ -116,20 +125,24 @@
 .negativeActionCard {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  margin: 5rpx;
+  margin: 5rpx 12rpx;
   width: 90%;
   height: 80rpx;
   border-radius: 8px;
-  padding: 16rpx;
+  padding: 12rpx;
   background-color: var(--color-lightBeige);
   color: var(--color-purple);
 }
 
 .actionIcon {
-  height: 40rpx; 
-  width: 40rpx;
+  height: 60rpx; 
+  width: 60rpx;
+  margin-left: 24rpx;
+}
+.actionTitle {
+  margin-right: 36rpx;
 }
 
 .pieChart {

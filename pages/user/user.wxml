@@ -11,20 +11,21 @@
   
   <!-- 心情分布栏 -->
     <view class="reportCard">
-      <text class="centerTitle">心情分布</text>
-      <view class="pieChart">
+      <!-- <text class="pieChartTitle">心情分布</text> -->
+      <!-- <view class="pieChart">
           <image class="emojiImage" src="{{emojis.items[0].emojiUrl}}" mode=""></image>
           <text> 60% </text>
           <image class="emojiImage" src="{{emojis.items[2].emojiUrl}}" mode=""></image>
           <text> 30% </text>
           <image class="emojiImage" src="{{emojis.items[1].emojiUrl}}" mode=""></image>
           <text> 10% </text>
-      </view>
+      </view> -->
+      <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ecPie }}"></ec-canvas>
     </view>
 
   <!-- 一周心情栏 -->
     <view class="reportCard">
-      <text class="centerTitle">一周心情</text>
+      <!-- <text class="centerTitle">一周心情</text>
       <view class="weeklyChart">
         <view class="dailyChart">
           <text> Sun </text>
@@ -54,8 +55,8 @@
           <text> Sat </text>
           <image class="emojiImage" src="{{emojis.items[6].emojiUrl}}" mode=""></image>
         </view>
-      </view>
-      
+      </view> -->
+      <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecLine }}"></ec-canvas>
     </view>
 
   <!-- 建议栏 -->
@@ -63,15 +64,15 @@
       <view class="suggestionCard">
         <text class="centerTitle">帮你开心起来</text>
         <view class="positiveActionCard">
-          <image class="actionIcon" src="" mode=""></image>
-          <text>计划假期</text>
+          <image class="actionIcon" src="/images/vacation.png" mode="aspectFill"></image>
+          <text class="actionTitle">计划假期</text>
         </view>
       </view>
       <view class="suggestionCard">
         <text class="centerTitle">试试减少这些</text>
-        <view class="negativeActionCard" b>
-          <image class="actionIcon" src="" mode="" ></image>
-          <text>垃圾食品</text>
+        <view class="negativeActionCard">
+          <image class="actionIcon" src="/images/critic.png" mode="aspectFill" ></image>
+          <text class="actionTitle">自我否定</text>
         </view>
       </view>
     </view>
