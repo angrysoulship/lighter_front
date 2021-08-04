@@ -10,11 +10,11 @@
 
   <!-- ListsView -->
     <view wx:if="{{hasUserInfo}}" class="listsCards" >
-      <!-- cardComponent,need to add loops -->
+      <!-- cardComponent -->
+      <view wx:if="{{post.length == 0}}" class="cardBody">
+        <image class="addBtn" src="/images/addPost.png" mode="aspectFill" ></image>
+      </view>
       <view class="card" wx:for="{{posts}}" wx:for-item="post">
-        <!-- <view wx:if="{{post.length == 0}}" class="cardEmpty">
-        
-        </view> -->
         <view class="cardBody">
           <view class="dateAndWeather">
             <text>{{post.date}}</text>
