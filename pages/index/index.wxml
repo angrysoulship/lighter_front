@@ -11,7 +11,7 @@
   <!-- ListsView -->
     <view wx:if="{{hasUserInfo}}" class="listsCards" >
       <!-- cardComponent -->
-      <view wx:if="{{post.length == 0}}" class="cardBody">
+      <view wx:if="{{posts.length == 0}}" class="cardEmpty" bindtap="goCreate">
         <image class="addBtn" src="/images/addPost.png" mode="aspectFill" ></image>
       </view>
       <view class="card" wx:for="{{posts}}" wx:for-item="post">
