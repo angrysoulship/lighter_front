@@ -12,14 +12,17 @@
     <view wx:if="{{hasUserInfo}}" class="listsCards" >
       <!-- cardComponent,need to add loops -->
       <view class="card" wx:for="{{posts}}" wx:for-item="post">
+        <!-- <view wx:if="{{post.length == 0}}" class="cardEmpty">
+        
+        </view> -->
         <view class="cardBody">
           <view class="dateAndWeather">
             <text>{{post.date}}</text>
-            <text>晴</text>
+            <image class="weatherIcon" src="/images/sunPurple.png" mode="aspectFill" ></image>
           </view>
           <image class="emojiImage" src="{{emojis.items[post.mood].emojiUrl}}" mode="aspectFill"></image>
           <view class="emojiLabel">{{emojis.items[post.mood].cnName}} </view>
-          <view class="emojiLabel">
+          <view class="postText">
             {{post.text}}
           </view>
           <view class="cardEdits">
