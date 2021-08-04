@@ -85,5 +85,34 @@ Page({
     this.setData({
       user: app.globalData.user
     })
+
+    let page = this
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${app.globalData.user.id}`,
+      method: "GET",
+      success: function (res) {
+        let info = res.data
+        // console.log('res1', res.data)
+        let posts = info.posts
+        page.setData({posts: posts})
+      }
+    })
+  },
+
+  onShow: function () {
+    let page = this
+    wx.request({
+      url: `http://localhost:3000/api/v1/users/${app.globalData.user.id}`,
+      method: "GET",
+      success: function (res) {
+        let info = res.data
+        // console.log('res1', res.data)
+        let posts = info.posts
+        page.setData({posts: posts})
+      }
+    })
   }
 })
+
+
+

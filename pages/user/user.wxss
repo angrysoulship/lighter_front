@@ -1,6 +1,7 @@
 /* pages/user/user.wxss */
 
 .userView {
+
   margin: 140rpx 12rpx 10rpx 12rpx;
   display: flex;
   flex-direction: column;

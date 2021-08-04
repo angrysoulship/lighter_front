@@ -136,14 +136,20 @@ Page({
       method: "POST",
       data: {posts: post},
       success: res => {
-        console.log('a',res)
-        wx.hideLoading();
-        wx.switchTab({
-          url: '/pages/index/index',
-        });
-        this.setData({
-          step:0
+        // console.log('a',res)
+        wx.showToast({
+          title: '创建成功',
+          icon: 'success',
+          duration: 1000
         })
+        setTimeout(function (){
+          wx.switchTab({
+             url: '/pages/index/index',
+          })
+        }, 1000)
+        
+
+
       }
     })
   },
@@ -168,7 +174,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      step:0
+    })
   },
 
   /**
