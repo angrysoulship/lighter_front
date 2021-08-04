@@ -1,6 +1,6 @@
 import * as echarts from '../../components/ec-canvas/echarts';
-
 const app = getApp()
+
 function initPieChart(canvas, width, height, dpr) {
   const chart = echarts.init(canvas, null, {
     width: width,
@@ -18,22 +18,7 @@ function initPieChart(canvas, width, height, dpr) {
       type: 'pie',
       center: ['50%', '50%'],
       radius: ['20%', '40%'],
-      data: [{
-        value: 55,
-        name: '北京'
-      }, {
-        value: 20,
-        name: '武汉'
-      }, {
-        value: 10,
-        name: '杭州'
-      }, {
-        value: 20,
-        name: '广州'
-      }, {
-        value: 38,
-        name: '上海'
-      }]
+      data:  app.globalData.moodResult
     }]
   };
 
@@ -50,10 +35,6 @@ function initLineChart(canvas, width, height, dpr) {
   canvas.setChart(chart);
 
   var option = {
-    title: {
-      text: '测试下面legend的红色区域不应被裁剪',
-      left: 'center'
-    },
     legend: {
       data: ['A', 'B', 'C'],
       top: 50,
@@ -206,9 +187,31 @@ Page({
         // console.log('res1', res.data)
         let posts = info.posts
         page.setData({posts: posts})
+        const dirtyData = page.data.posts
+        const mood = ['开心', '上头', '好气！', '好烦！', '好失败!', '担心', '难过', '累了', '放松', '平静']
+        const moodCount = [0,0,0,0,0,0,0,0,0,0,0]
+        const moodResult = []
+        for (let index in dirtyData) {
+          for (var i = 0; i < 11; ++i) {
+            if (dirtyData[index].mood === String(i)) {
+              moodCount[i] += 1;
+              const cleanMoodCount = {
+                name: mood[i],
+                value: moodCount[i]
+              }
+              moodResult.push(cleanMoodCount)
+            }
+          }
+        }
+        page.setData({
+          moodResult
+        })
+        app.globalData.moodResult = moodResult
       }
     })
   },
+
+
 
   onShow: function () {
     let page = this
@@ -220,13 +223,32 @@ Page({
         // console.log('res1', res.data)
         let posts = info.posts
         page.setData({posts: posts})
+        const dirtyData = page.data.posts
+        const mood = ['开心', '上头', '好气！', '好烦！', '好失败!', '担心', '难过', '累了', '放松', '平静']
+        const moodCount = [0,0,0,0,0,0,0,0,0,0,0]
+        const moodResult = []
+        for (let index in dirtyData) {
+          for (var i = 0; i < 11; ++i) {
+            if (dirtyData[index].mood === String(i)) {
+              moodCount[i] += 1;
+              const cleanMoodCount = {
+                name: mood[i],
+                value: moodCount[i]
+              }
+              moodResult.push(cleanMoodCount)
+            }
+          }
+        }
+        page.setData({
+          moodResult
+        })
+        app.globalData.moodResult = moodResult
       }
     })
   }
 
   
 })
-
 
 
 
