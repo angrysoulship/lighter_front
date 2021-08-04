@@ -115,7 +115,12 @@ Page({
             // console.log('res1', res.data)
             let posts = info.posts
             page.setData({posts: posts})
+            // console.log(posts.length)
           }
+        })
+
+        wx.switchTab({
+          url: '/pages/create/create',
         })
       }
     })
