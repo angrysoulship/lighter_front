@@ -1,7 +1,7 @@
 <!--pages/users/users.wxml-->
 <text>pages/users/users.wxml</text>
 
-<view wx:for="{{users}}" wx:for-item="user">
-  <h2 bindtap="onClick" data-id="{{user.id}}">{{user.nickname}}</h2>
-</view>
 
+<view> 
+  <image src="/images/lighter'.png"></image>
+</view>

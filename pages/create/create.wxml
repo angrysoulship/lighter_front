@@ -17,7 +17,10 @@
     <!-- 结束EmojiScrollView -->
     <view class="moodAxies"></view>
     <view bindtap="changeView" class="btn-beige">提交</view>
+    <view>
+    </view>
   </view>
+    <image class="emojiInfo" src="../../images/lighter-pos.png"></image>
   <!-- view1 -->
 
   <!-- view2 -->
