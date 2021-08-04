@@ -11,7 +11,7 @@
   
   <!-- 心情分布栏 -->
     <view class="reportCard">
-      <text class="centerTitle">心情分布</text>
+      <!-- <text class="centerTitle">心情分布</text>
       <view class="pieChart">
           <image class="emojiImage" src="{{emojis.items[0].emojiUrl}}" mode=""></image>
           <text> 60% </text>
@@ -19,12 +19,13 @@
           <text> 30% </text>
           <image class="emojiImage" src="{{emojis.items[1].emojiUrl}}" mode=""></image>
           <text> 10% </text>
-      </view>
+      </view> -->
+      <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ecPie }}"></ec-canvas>
     </view>
 
   <!-- 一周心情栏 -->
     <view class="reportCard">
-      <text class="centerTitle">一周心情</text>
+      <!-- <text class="centerTitle">一周心情</text>
       <view class="weeklyChart">
         <view class="dailyChart">
           <text> Sun </text>
@@ -54,8 +55,8 @@
           <text> Sat </text>
           <image class="emojiImage" src="{{emojis.items[6].emojiUrl}}" mode=""></image>
         </view>
-      </view>
-      
+      </view> -->
+      <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecLine }}"></ec-canvas>
     </view>
 
   <!-- 建议栏 -->

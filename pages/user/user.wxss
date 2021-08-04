@@ -1,5 +1,12 @@
 /* pages/user/user.wxss */
-
+ec-canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
 .userView {
   margin: 140rpx 12rpx 10rpx 12rpx;
   display: flex;
@@ -62,12 +69,13 @@
   align-items: center;
   margin-bottom: 40rpx;
   width: 90%;
-  height: fit-content;
+  height: 300px;
   min-height: 150px;
   border-radius: 18px;
   background-color: var(--color-beige);
   padding: 12rpx;
   box-shadow: 0 5rpx rgba(0, 0, 0, 0.15);
+  position: relative;
 }
 
 .suggestionSector {
