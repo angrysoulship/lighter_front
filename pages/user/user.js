@@ -199,7 +199,7 @@ Page({
 
     let page = this
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${app.globalData.user.id}`,
+      url: `https://lighter-api.wogengapp.cn/api/v1/users/${app.globalData.user.id}`,
       method: "GET",
       success: function (res) {
         let info = res.data
@@ -213,7 +213,7 @@ Page({
   onShow: function () {
     let page = this
     wx.request({
-      url: `http://localhost:3000/api/v1/users/${app.globalData.user.id}`,
+      url: `https://lighter-api.wogengapp.cn/api/v1/users/${app.globalData.user.id}`,
       method: "GET",
       success: function (res) {
         let info = res.data
@@ -222,6 +222,13 @@ Page({
         page.setData({posts: posts})
       }
     })
+
+    console.log(app.data)
+    this.setData({
+      user: app.globalData.user
+    })
+
+
   }
 
   
