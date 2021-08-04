@@ -1,48 +1,35 @@
 <view class="container">
 
+  <view wx:if="{{!hasUserInfo}}" class="landingPages" >
+    <image class="landingPage" src="/images/1.png" mode="aspectFill"></image>
+    <image class="landingPage" src="/images/2.png" mode="aspectFill"></image>
+    <image class="landingPage" src="/images/3.png" mode="aspectFill"></image>
+    <image class="downBtn" src="/images/down.png" mode="aspectFill"></image>
+    <view class="loginBtn" bindtap="getUserProfile">登陆体验</view>
+  </view>
 
-  
-    <button class="" bindtap="getUserProfile">Login</button>
-
-
-    <!-- CalendarView -->
-    <view class="calendarView" wx:if="{{step == 1}}">
-      <view class="viewBtns">
-        <image class="viewIcon" bindtap="getCalendarView" src="/images/calendar.png" mode="aspectFill">1</image>
-        <image class="viewIcon" bindtap="getListsView" src="/images/lists.png" mode="aspectFill">2</image>
-      </view>
-    </view>
-    <!-- CalendarView -->
-
-    <!-- ListsView -->
-
-
-      <view class="listsCards" >
-        <!-- cardComponent,need to add loops -->
-        <view class="card" wx:for="{{posts}}" wx:for-item="post">
-          <view class="cardBody">
-            <view class="dateAndWeather">
-              <text>{{post.date}}</text>
-              <text>晴</text>
-            </view>
-            <image class="emojiImage" src="{{emojis.items[post.mood].emojiUrl}}" mode="aspectFill"></image>
-            <view class="EmojiLabel">{{emojis.items[post.mood].cnName}} </view>
-            <view class="EmojiLabel">
-              {{post.text}}
-            </view>
+  <!-- ListsView -->
+    <view wx:if="{{hasUserInfo}}" class="listsCards" >
+      <!-- cardComponent,need to add loops -->
+      <view class="card" wx:for="{{posts}}" wx:for-item="post">
+        <view class="cardBody">
+          <view class="dateAndWeather">
+            <text>{{post.date}}</text>
+            <text>晴</text>
+          </view>
+          <image class="emojiImage" src="{{emojis.items[post.mood].emojiUrl}}" mode="aspectFill"></image>
+          <view class="emojiLabel">{{emojis.items[post.mood].cnName}} </view>
+          <view class="emojiLabel">
+            {{post.text}}
           </view>
           <view class="cardEdits">
-            <image class="editIcon" bindtap="" src="/images/edit.png" mode="aspectFill">1</image>
-            <image class="editIcon" bindtap="deletePost" data-id="{{post.id}}" src="/images/delete.png" mode="aspectFill">1</image>
-
+            <image class="editIcon" bindtap="deletePost" data-id="{{post.id}}" src="/images/delete.png" mode="aspectFill"></image>
           </view>
         </view>
-        <!-- cardComponent,need to add loops -->
-        
-        <!-- cardComponent,need to add loops -->
       </view>
     </view>
-    <!-- ListsView -->
+  <!-- ListsView -->
+</view>
 
 
 

@@ -30,11 +30,11 @@
     </view>
     <view class="dateAndWeather">
       <view class="dateSelect">
-        <text>日期</text>
+        <!-- <text>日期</text> -->
         <view class="section">
-          <picker mode="date" value="{{date}}" start="2021-01-01" end="2022-12-31" bindchange="bindDateChange">
+          <picker mode="date" value="{{date}}" start="2019-01-01" end="2023-12-31" bindchange="bindDateChange">
             <view class="picker">
-              {{date}}
+              DATE {{date}}
             </view>
           </picker>
         </view>

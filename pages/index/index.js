@@ -4,6 +4,7 @@ const app = getApp()
 
 Page({
   data: {
+    hasUserInfo: false,
     emojis: {
       active: 0,
       items: [{
