@@ -10,8 +10,9 @@
     </view>
   
   <!-- 心情分布栏 -->
+    <text class="pieChartTitle">心情分析</text>
+    <text class="enTitle">Mood Report</text>
     <view class="reportCard">
-      <!-- <text class="pieChartTitle">心情分布</text> -->
       <!-- <view class="pieChart">
           <image class="emojiImage" src="{{emojis.items[0].emojiUrl}}" mode=""></image>
           <text> 60% </text>
@@ -24,7 +25,7 @@
     </view>
 
   <!-- 一周心情栏 -->
-    <view class="reportCard">
+    <view class="reportCardSm">
       <!-- <text class="centerTitle">一周心情</text>
       <text class="enTitle">Weekly Mood</text>
       <view class="weeklyChart">
@@ -58,6 +59,39 @@
         </view>
       </view> -->
       <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecLine }}" force-use-old-canvas="true"></ec-canvas>
+    </view>
+
+    <view class="reportCardFit">
+      <view class="weeklyChart">
+        <view class="dailyChart">
+          <text> Sun </text>
+          <image class="emojiImage" src="{{emojis.items[0].emojiUrl}}" mode=""></image>
+        </view>
+        <view class="dailyChart">
+          <text> Mon </text>
+          <image class="emojiImage" src="{{emojis.items[1].emojiUrl}}" mode=""></image>
+        </view>
+        <view class="dailyChart">
+          <text> Tue </text>
+          <image class="emojiImage" src="{{emojis.items[2].emojiUrl}}" mode=""></image>
+        </view>
+        <view class="dailyChart">
+          <text> Wed </text>
+          <image class="emojiImage" src="{{emojis.items[3].emojiUrl}}" mode=""></image>
+        </view>
+        <view class="dailyChart">
+          <text> Thu </text>
+          <image class="emojiImage" src="{{emojis.items[4].emojiUrl}}" mode=""></image>
+        </view>
+        <view class="dailyChart">
+          <text> Fri </text>
+          <image class="emojiImage" src="{{emojis.items[5].emojiUrl}}" mode=""></image>
+        </view>
+        <view class="dailyChart">
+          <text> Sat </text>
+          <image class="emojiImage" src="{{emojis.items[6].emojiUrl}}" mode=""></image>
+        </view>
+      </view> 
     </view>
 
   <!-- 建议栏 -->
