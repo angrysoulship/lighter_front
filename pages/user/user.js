@@ -8,6 +8,20 @@ function initPieChart(canvas, width, height, dpr) {
     devicePixelRatio: dpr // new
   });
   var option = {
+    title: {
+      text: '心情分布',
+      subtext: "Sub Title",
+      left: 'center',
+      textStyle: {
+        color: '#FEE4D2',
+        fontSize: 18
+      },
+      subtextStyle: {
+        color: '#FEE4D2',
+        fontSize: 16
+      },
+      itemGap: 6
+    },
     series: [{
       label: {
         textStyle: {
@@ -18,6 +32,7 @@ function initPieChart(canvas, width, height, dpr) {
       type: 'pie',
       center: ['50%', '50%'],
       radius: ['20%', '50%'],
+      bottom: 10 ,
       itemStyle: {
         // 阴影的大小
         shadowBlur: 200,
@@ -72,6 +87,7 @@ function initLineChart(canvas, width, height, dpr) {
       name: '心情指数',
       type: 'line',
       smooth: true,
+      color: '#FEE4D2',
       data: [12, 8, 4, 9, 3, 5, 11]
     }]
   };
