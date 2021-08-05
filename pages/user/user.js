@@ -180,7 +180,7 @@ Page({
 
     let page = this
     wx.request({
-      url: `https://lighter-api.wogengapp.cn/api/v1/users/${app.globalData.user.id}`,
+      url: `${getApp().globalData.url}/users/${app.globalData.user.id}`,
       method: "GET",
       success: function (res) {
         let info = res.data
@@ -216,7 +216,7 @@ Page({
   onShow: function () {
     let page = this
     wx.request({
-      url: `https://lighter-api.wogengapp.cn/api/v1/users/${app.globalData.user.id}`,
+      url: `${getApp().globalData.url}/users/${app.globalData.user.id}`,
       method: "GET",
       success: function (res) {
         let info = res.data

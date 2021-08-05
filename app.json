@@ -1,15 +1,11 @@
 {
   "pages":[
+    "pages/splash/splash",
     "pages/index/index",
     "pages/create/create",
-    "pages/user/user",
-    "pages/users/users",
-    "pages/show/show",
-    "pages/edit/edit", 
-    "pages/new/test",
-    "pages/new/test2",
-    "pages/posts/posts"
+    "pages/user/user"
   ],
+
   "window":{
     "navigationStyle": "custom",
     "backgroundTextStyle":"light",

@@ -135,7 +135,8 @@ Page({
     }
 
     wx.request({
-      url: `https://lighter-api.wogengapp.cn/api/v1/users/${app.globalData.user.id}/posts`,
+      // url: `${getApp().globalData.url}/users/${app.globalData.user.id}/posts`,
+      url: `http://localhost:3000/api/v1/users/${app.globalData.user.id}/posts`,
       method: "POST",
       data: {posts: post},
       success: res => {
