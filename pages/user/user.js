@@ -8,11 +8,10 @@ function initPieChart(canvas, width, height, dpr) {
     devicePixelRatio: dpr // new
   });
   var option = {
-    // backgroundColor: "#ffffff",
     series: [{
       label: {
         textStyle: {
-          color: 'rgba(255, 255, 255, 1)',
+          color: '#FEE4D2',
           fontSize: 14
         }
       },
