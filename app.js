@@ -7,7 +7,7 @@ App({
       success: (res) => {
         // console.log('result are',res.code)
         wx.request({
-          url: 'https://lighter-api.wogengapp.cn/api/v1/login',
+          url: `${getApp().globalData.url}/login`,
           method: 'POST',
           data: { code: res.code },
           success: (res) => {
@@ -24,6 +24,8 @@ App({
 
   globalData: {
     userInfo: null,
-    moodResult: ''
-  }
+    moodResult: '',
+    // url: "http://localhost:3000/api/v1"
+    url: "https://lighter-api.wogengapp.cn/api/v1"
+    }
 })

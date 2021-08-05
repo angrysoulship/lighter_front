@@ -1,0 +1,9 @@
+<view class="container">
+  <view wx:if="{{!hasUserInfo}}" class="landingPages" >
+    <image class="landingPage" src="/images/1.png" mode="aspectFill"></image>
+    <image class="landingPage" src="/images/2.png" mode="aspectFill"></image>
+    <image class="landingPage" src="/images/3.png" mode="aspectFill"></image>
+    <image class="downBtn" src="/images/down.png" mode="aspectFill"></image>
+    <view class="loginBtn" bindtap="getUserProfile">登陆体验</view>
+  </view>
+</view>
