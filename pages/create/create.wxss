@@ -184,12 +184,12 @@ textarea {
 
 .picker{
   margin-left: 6rpx;
-  /* background-color: var(--color-beige);
-  border: 1px solid var(--color-beige); */
-  border-radius: 4px;
+  /* background-color: var(--color-beige); */
+  border: 1px solid var(--color-beige);
+  border-radius: 8px;
   min-width: 200rpx;
   width: fit-content;
-  height: 25rpx;
+  height: 30rpx;
   font-size: 12px;
   text-align: center;
   color: var(--color-beige);

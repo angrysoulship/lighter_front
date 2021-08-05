@@ -1,4 +1,5 @@
 // pages/new/test.js
+const util = require('../../utils/util');
 const app = getApp()
 Page({
  
@@ -6,6 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    // 日期筛选
+    currentDate: util.getNowDate(new Date()),
     tabCur: 0,
     step: 0,
     emojis: {
@@ -101,9 +104,9 @@ Page({
   },
 
   bindDateChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
+    // console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      date: e.detail.value
+      currentDate: e.detail.value
     })
   },
 
@@ -120,14 +123,14 @@ Page({
   },
 
   createEmoji() {
-    console.log('date is',this.data.date)
+    console.log('date is',this.data.currentDate)
     console.log('emoji id is', this.data.emojis.active)
     console.log('text is', this.data.currentText)
     console.log('user id', this.data.user.id)
     let post = {
       mood: this.data.emojis.active,
       text: this.data.currentText,
-      date: this.data.date,
+      date: this.data.currentDate,
       user_id: this.data.user.id
     }
 
