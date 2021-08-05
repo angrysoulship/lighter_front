@@ -117,30 +117,34 @@ Page({
   },
   
   bindTextAreaBlur(e) {
-    this.setData({
-      currentText: e.detail.value
-    })
+    // this.setData({
+    //   currentText: e.detail.value
+    // })
+    console.log(this.data.currentText)
   },
 
-  createEmoji() {
+  createEmoji(e) {
+    // console.log(e)
     console.log('date is',this.data.currentDate)
     console.log('emoji id is', this.data.emojis.active)
-    console.log('text is', this.data.currentText)
+
     console.log('user id', this.data.user.id)
+    const text = e.detail.value.text
+    console.log(text)
     let post = {
       mood: this.data.emojis.active,
-      text: this.data.currentText,
+      text: text,
       date: this.data.currentDate,
       user_id: this.data.user.id
     }
 
     wx.request({
       // url: `${getApp().globalData.url}/users/${app.globalData.user.id}/posts`,
-      url: `http://localhost:3000/api/v1/users/${app.globalData.user.id}/posts`,
+      url: `${getApp().globalData.url}/users/${app.globalData.user.id}/posts`,
       method: "POST",
       data: {posts: post},
       success: res => {
-        // console.log('a',res)
+        console.log('a',res)
         wx.showToast({
           title: '创建成功',
           icon: 'success',
