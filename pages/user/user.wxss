@@ -70,14 +70,10 @@ ec-canvas {
 }
 
 .reportCard {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
   overflow: hidden;
   margin-bottom: 40rpx;
   width: 90%;
-  height: fit-content;
+  height: 300px;
   min-height: 150px;
   border-radius: 18px;
   background-color: var(--color-darkPurple);

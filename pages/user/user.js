@@ -11,13 +11,24 @@ function initPieChart(canvas, width, height, dpr) {
     // backgroundColor: "#ffffff",
     series: [{
       label: {
-        normal: {
+        textStyle: {
+          color: 'rgba(255, 255, 255, 1)',
           fontSize: 14
         }
       },
       type: 'pie',
       center: ['50%', '50%'],
-      radius: ['20%', '40%'],
+      radius: ['20%', '50%'],
+      itemStyle: {
+        // 阴影的大小
+        shadowBlur: 200,
+        // 阴影水平方向上的偏移
+        shadowOffsetX: 0,
+        // 阴影垂直方向上的偏移
+        shadowOffsetY: 0,
+        // 阴影颜色
+        shadowColor: 'rgba(0, 0, 0, 0.5)'
+    },
       data:  app.globalData.moodResult
     }]
   };
@@ -35,13 +46,6 @@ function initLineChart(canvas, width, height, dpr) {
   canvas.setChart(chart);
 
   var option = {
-    legend: {
-      data: ['A', 'B', 'C'],
-      top: 50,
-      left: 'center',
-      // backgroundColor: 'red',
-      z: 100
-    },
     grid: {
       containLabel: true
     },
@@ -65,21 +69,11 @@ function initLineChart(canvas, width, height, dpr) {
       }
       // show: false
     },
-    series: [{
-      name: 'A',
+    series: [ {
+      name: '心情指数',
       type: 'line',
       smooth: true,
-      data: [18, 36, 65, 30, 78, 40, 33]
-    }, {
-      name: 'B',
-      type: 'line',
-      smooth: true,
-      data: [12, 50, 51, 35, 70, 30, 20]
-    }, {
-      name: 'C',
-      type: 'line',
-      smooth: true,
-      data: [10, 30, 31, 50, 40, 20, 10]
+      data: [12, 8, 4, 9, 3, 5, 11]
     }]
   };
 
