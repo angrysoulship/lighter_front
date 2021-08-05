@@ -5,7 +5,10 @@
 <view class="mainView">
   <!-- view1 -->
   <view  wx:if="{{step == 0}}" class="bodyView">
-    <text class="centerTitle">你现在是什么心情呢？</text>
+    <view class="titles">
+      <text class="centerTitle">你现在是什么心情呢？</text>
+      <text class="engTitle">How are you feeling today?</text>
+    </view>
     
     <!-- 开始EmojiScrollView -->
     <scroll-view scroll-x="true" scroll-with-animation="true" class="scrollView" scroll-left="{{scrollLeft}}rpx">
@@ -53,6 +56,7 @@
         <!-- </view> -->
       </view>
       <text class="emojiLabel">{{emojis.items[emojis.active].cnName}}</text>
+      <text class="engEmojiLabel">{{emojis.items[emojis.active].name}}</text>
 
       <form bindsubmit="createEmoji">
         <view class="textarea-wrp">

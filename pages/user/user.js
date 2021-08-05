@@ -242,11 +242,11 @@ Page({
         page.setData({
           moodResult
         })
+        console.log(page.data.moodResult)
         app.globalData.moodResult = moodResult
       }
     })
 
-    console.log(app.data)
     this.setData({
       user: app.globalData.user
     })
