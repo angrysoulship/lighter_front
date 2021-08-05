@@ -20,12 +20,12 @@
           <image class="emojiImage" src="{{emojis.items[1].emojiUrl}}" mode=""></image>
           <text> 10% </text>
       </view> -->
-      <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ecPie }}"></ec-canvas>
+      <ec-canvas id="mychart-dom-pie" canvas-id="mychart-pie" ec="{{ ecPie }}" force-use-old-canvas="true"></ec-canvas>
     </view>
 
   <!-- 一周心情栏 -->
     <view class="reportCard">
-      <text class="centerTitle">一周心情</text>
+      <!-- <text class="centerTitle">一周心情</text>
       <text class="enTitle">Weekly Mood</text>
       <view class="weeklyChart">
         <view class="dailyChart">
@@ -56,8 +56,8 @@
           <text> Sat </text>
           <image class="emojiImage" src="{{emojis.items[6].emojiUrl}}" mode=""></image>
         </view>
-      </view>
-      <!-- <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecLine }}"></ec-canvas> -->
+      </view> -->
+      <ec-canvas id="mychart-dom-line" canvas-id="mychart-line" ec="{{ ecLine }}" force-use-old-canvas="true"></ec-canvas>
     </view>
 
   <!-- 建议栏 -->
