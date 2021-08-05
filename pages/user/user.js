@@ -8,20 +8,20 @@ function initPieChart(canvas, width, height, dpr) {
     devicePixelRatio: dpr // new
   });
   var option = {
-    title: {
-      text: '心情分布',
-      subtext: "Sub Title",
-      left: 'center',
-      textStyle: {
-        color: '#FEE4D2',
-        fontSize: 18
-      },
-      subtextStyle: {
-        color: '#FEE4D2',
-        fontSize: 16
-      },
-      itemGap: 6
-    },
+    // title: {
+    //   text: '心情分布',
+    //   subtext: "Sub Title",
+    //   left: 'center',
+    //   textStyle: {
+    //     color: '#FEE4D2',
+    //     fontSize: 18
+    //   },
+    //   subtextStyle: {
+    //     color: '#FEE4D2',
+    //     fontSize: 16
+    //   },
+    //   itemGap: 6
+    // },
     series: [{
       label: {
         textStyle: {

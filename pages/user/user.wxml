@@ -5,7 +5,7 @@
       <view >
         <image class="userAvatar" src="{{user.wechat_avatar}}" mode=""></image>
       </view>
-      <text class="greeting">Hello!</text>
+      <text class="greeting">Hello</text>
       <text class="userName">{{user.nickname}}</text>
     </view>
   
