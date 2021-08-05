@@ -173,86 +173,57 @@ Page({
   },
   
 
-  onLoad: function () {
-    this.setData({
-      user: app.globalData.user
-    })
-
+  realData() {
     let page = this
     wx.request({
-      url: `${getApp().globalData.url}/users/${app.globalData.user.id}`,
-      method: "GET",
-      success: function (res) {
-        let info = res.data
-        // console.log('res1', res.data)
-        let posts = info.posts
-        page.setData({posts: posts})
-        const dirtyData = page.data.posts
-        const mood = ['开心', '上头', '好气！', '好烦！', '好失败!', '担心', '难过', '累了', '放松', '平静']
-        const moodCount = [0,0,0,0,0,0,0,0,0,0,0]
-        const moodResult = []
-        for (let index in dirtyData) {
-          for (var i = 0; i < 11; ++i) {
-            if (dirtyData[index].mood === String(i)) {
-              moodCount[i] += 1;
-              const cleanMoodCount = {
-                name: mood[i],
-                value: moodCount[i]
-              }
-              moodResult.push(cleanMoodCount)
-            }
+    url: `https://lighter-api.wogengapp.cn/api/v1/users/${app.globalData.user.id}`,
+    method: "GET",
+    success: function (res) {
+      let info = res.data
+      let posts = info.posts
+      page.setData({posts: posts})
+      const dirtyData = page.data.posts
+      const mood = ['开心', '上头', '好气！', '好烦！', '好失败!', '担心', '难过', '累了', '放松', '平静']
+      const moodCount = [0,0,0,0,0,0,0,0,0,0]
+      let moodResult = []
+      for (let index in dirtyData) {
+        for (var i = 0; i < 10; ++i) {
+          if (dirtyData[index].mood === String(i)) {
+            moodCount[i] += 1;
           }
         }
-        page.setData({
-          moodResult
-        })
-        app.globalData.moodResult = moodResult
       }
-    })
-  },
-
-
-
-  onShow: function () {
-    let page = this
-    wx.request({
-      url: `${getApp().globalData.url}/users/${app.globalData.user.id}`,
-      method: "GET",
-      success: function (res) {
-        let info = res.data
-        // console.log('res1', res.data)
-        let posts = info.posts
-        page.setData({posts: posts})
-        const dirtyData = page.data.posts
-        const mood = ['开心', '上头', '好气！', '好烦！', '好失败!', '担心', '难过', '累了', '放松', '平静']
-        const moodCount = [0,0,0,0,0,0,0,0,0,0,0]
-        const moodResult = []
-        for (let index in dirtyData) {
-          for (var i = 0; i < 11; ++i) {
-            if (dirtyData[index].mood === String(i)) {
-              moodCount[i] += 1;
-              const cleanMoodCount = {
-                name: mood[i],
-                value: moodCount[i]
-              }
-              moodResult.push(cleanMoodCount)
-            }
-          }
+      for (let index in mood) {
+        const cleanMoodCount = {
+          name: mood[index],
+          value: moodCount[index]
         }
-        page.setData({
-          moodResult
-        })
-        console.log(page.data.moodResult)
-        app.globalData.moodResult = moodResult
+        if (cleanMoodCount.value !== 0) {
+          moodResult.push(cleanMoodCount)
+        }
       }
-    })
+      console.log(moodResult)
+      app.globalData.moodResult = moodResult
+    }
+  })
+},
 
-    this.setData({
-      user: app.globalData.user
-    })
+onLoad: function () {
+  this.setData({
+    user: app.globalData.user
+  })
+
+  this.realData()
+},
 
 
-  }
+
+onShow: function () {
+  this.setData({
+    user: app.globalData.user
+  })
+  this.realData()
+},
 
   
 })
