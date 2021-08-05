@@ -92,7 +92,6 @@ ec-canvas {
   width: 95%;
   height: fit-content;
   min-height: 150px;
-  border-radius: 18px;
 }
 
 .suggestionCard {
@@ -104,7 +103,7 @@ ec-canvas {
   width: 80%;
   height: fit-content;
   min-height: 150px;
-  border-radius: 8px;
+  border-radius: 18px;
   padding: 12rpx;
   background-color: var(--color-darkPurple);
 }
