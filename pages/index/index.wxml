@@ -12,13 +12,13 @@
     <view wx:if="{{hasUserInfo}}" class="listsCards" >
       <!-- cardComponent -->
       <view wx:if="{{!posts || posts.length === 0}}" class="cardEmpty" bindtap="goCreate">
-        <image class="addBtn" src="/images/addPost.png" mode="aspectFill" ></image>
+        <image class="addBtn" src="/images/addPost.png" mode="center" ></image>
       </view>
       <view class="card" wx:for="{{posts}}" wx:for-item="post">
         <view class="cardBody">
           <view class="dateAndWeather">
             <text>{{post.date}}</text>
-            <image class="weatherIcon" src="/images/sunPurple.png" mode="aspectFill" ></image>
+            <image class="weatherIcon" src="/images/sunPurple.png" mode="center" ></image>
           </view>
           <image class="emojiImage" src="{{emojis.items[post.mood].emojiUrl}}" mode="aspectFill"></image>
           <view class="emojiLabel">{{emojis.items[post.mood].cnName}} </view>
