@@ -36,7 +36,7 @@ ec-canvas {
   justify-content: center;
   color: var(--color-beige);
   margin-bottom: 30rpx;
-  margin-top: 12rpx;
+  margin-top: 10rpx;
 }
 
 .userAvatar {
@@ -75,7 +75,7 @@ ec-canvas {
   overflow: hidden;
   margin-bottom: 40rpx;
   width: 90%;
-  height: 300px;
+  height: fit-content;
   min-height: 150px;
   border-radius: 18px;
   background-color: var(--color-darkPurple);
@@ -132,8 +132,15 @@ ec-canvas {
   height: 80rpx;
   border-radius: 8px;
   padding: 12rpx;
-  background-color: var(--color-lightBeige);
+  background-color: var(--color-beige);
   color: var(--color-purple);
+}
+
+.suggestionIcon {
+  width: 160rpx;
+  height: 160rpx;
+  margin: 0rpx auto;
+  padding: 0rpx;
 }
 
 .actionIcon {
@@ -141,6 +148,7 @@ ec-canvas {
   width: 60rpx;
   margin-left: 24rpx;
 }
+
 .actionTitle {
   margin-right: 36rpx;
 }
@@ -156,7 +164,6 @@ ec-canvas {
   min-height: 150px;
   border: 1px;
   border-radius: 8px;
-  border-color: #f1eaea;
   padding: 12rpx;
 }
 
@@ -168,10 +175,8 @@ ec-canvas {
   margin: 5rpx;
   width: 90%;
   height: fit-content;
-  min-height: 120px;
   border: 1px;
   border-radius: 8px;
-  border-color: #f1eaea;
   padding: 12rpx;
 }
 
@@ -181,11 +186,11 @@ ec-canvas {
   justify-content: space-between;
   align-items: center;
   margin: 5rpx;
-  background-color: var(--color-purple);
-  color: var(--color-beige);
+  background-color: var(--color-beige);
+  color: var(--color-purple);
   font-size: small;
   height: fit-content;
-  min-height: 80px;
+  min-height: 70px;
   border-radius: 18px;
   padding: 12rpx;
 }
@@ -196,6 +201,6 @@ ec-canvas {
 }
 
 .emojiLabel {
-  margin-top: 25rpx;
+  margin-top: 20rpx;
 }
 

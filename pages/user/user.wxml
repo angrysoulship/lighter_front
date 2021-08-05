@@ -62,6 +62,7 @@
   <!-- 建议栏 -->
     <view class="suggestionSector">
       <view class="suggestionCard">
+        <image class="suggestionIcon" src="/images/happy.png" mode="aspectFill"></image>
         <text class="centerTitle">帮你开心起来</text>
         <view class="positiveActionCard">
           <image class="actionIcon" src="/images/vacation.png" mode="aspectFill"></image>
@@ -69,6 +70,7 @@
         </view>
       </view>
       <view class="suggestionCard">
+        <image class="suggestionIcon" src="/images/sad.png" mode="aspectFill"></image>
         <text class="centerTitle">试试减少这些</text>
         <view class="negativeActionCard">
           <image class="actionIcon" src="/images/critic.png" mode="aspectFill" ></image>
