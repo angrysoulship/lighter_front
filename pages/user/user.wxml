@@ -26,6 +26,7 @@
   <!-- 一周心情栏 -->
     <view class="reportCard">
       <text class="centerTitle">一周心情</text>
+      <text class="enTitle">Weekly Mood</text>
       <view class="weeklyChart">
         <view class="dailyChart">
           <text> Sun </text>
