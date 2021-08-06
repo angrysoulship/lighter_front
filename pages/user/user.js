@@ -1,8 +1,8 @@
 import * as echarts from '../../components/ec-canvas/echarts';
 const app = getApp()
-
+let chart = null
 function initPieChart(canvas, width, height, dpr) {
-  const chart = echarts.init(canvas, null, {
+    chart = echarts.init(canvas, null, {
     width: width,
     height: height,
     devicePixelRatio: dpr // new
@@ -91,7 +91,7 @@ function initLineChart(canvas, width, height, dpr) {
       data: [12, 8, 4, 9, 3, 5, 11]
     }]
   };
-
+  canvas.setChart(chart);
   chart.setOption(option);
   return chart;
 }
@@ -213,6 +213,13 @@ Page({
       }
       console.log(moodResult)
       app.globalData.moodResult = moodResult
+      chart.setOption(
+        {
+          series: {
+            data:  app.globalData.moodResult
+          }
+        }
+      )
     }
   })
 },
